@@ -5,7 +5,7 @@ const Homepage = () => (
   <div className="bgcontainer">
     <div className="getposition">
       <div className="flex justify-center  items-center">
-        <h1 className="text-3xl text-center text-black font-bold">Welcome to the E-Bike Shop</h1>
+        <h1 className="text-6xl w-full text-center text-white font-bold">THE NEW VESPA TRIDENT</h1>
       </div>
       <div className="flex justify-center items-center">
         <ul className="flex gap-4 mt-5">
