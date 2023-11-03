@@ -4,5 +4,42 @@
 @import "tailwindcss/utilities";
 
 * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+/* this part is based on the home page design */
+.bgcontainer {
+  background-color: #ffbf00;
+  background-image: url("./img/E-bikebackground.png");
+  background-repeat: no-repeat;
+  background-size: 44%;
+  background-position: center;
+  height: 100vh;
+}
+
+.btnone {
+  background-color: #97bf0f;
+  border: 1px solid #f3f3f4;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 1.3s ease-in-out;
+}
+
+.btnone:hover {
+  background-color: #f3f3f4;
+  color: #000;
+  border: 1px solid #464684;
+}
+
+.getposition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
