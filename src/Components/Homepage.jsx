@@ -1,4 +1,5 @@
 import '../index.css';
+import { NavLink } from 'react-router-dom';
 
 const Homepage = () => (
   <div className="bgcontainer">
@@ -9,10 +10,14 @@ const Homepage = () => (
       <div className="flex justify-center items-center">
         <ul className="flex gap-4 mt-5">
           <li className="btnone">
-            <h2>Login</h2>
+            <NavLink to="/login">
+              <h2>Login</h2>
+            </NavLink>
           </li>
           <li className="btnone">
-            <h2>Sign Up</h2>
+            <NavLink to="/signup">
+              <h2>Sign Up</h2>
+            </NavLink>
           </li>
         </ul>
       </div>
