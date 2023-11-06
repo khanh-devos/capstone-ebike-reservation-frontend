@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { fetchLogin } from '../../redux/auth/loginSlice';
+import { fetchLogin } from '../../redux/auth/authSlice';
 import './auth.css';
 
 function Loginpage() {
@@ -15,7 +15,7 @@ function Loginpage() {
     const data = { name, password };
 
     dispatch(fetchLogin(data));
-    // form.reset();
+    form.reset();
   };
 
   return (
@@ -36,7 +36,6 @@ function Loginpage() {
           placeholder="Password"
           type="password"
           name="password"
-          value="@manda123"
         />
         <button type="submit">Login</button>
 

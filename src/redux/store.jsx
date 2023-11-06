@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import loginSlice from './auth/loginSlice';
 import ebikeSlice from './ebike/ebikeSlice';
+import authSlice from './auth/authSlice';
 
 const store = configureStore({
   reducer: {
-    loginSlice,
+    authSlice,
     ebikeSlice,
   },
 });

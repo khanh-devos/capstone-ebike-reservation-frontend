@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const EBIKE_URL = 'http://localhost:3100/ebikes';
+const EBIKE_URL = 'http://localhost:3100/api/v1/ebikes';
 
 const initialState = {
   ebikes: [],
@@ -11,12 +11,14 @@ const initialState = {
 
 export const fetchEbike = createAsyncThunk(
   'api/fetchEbike',
-  async (data, thunkAPI) => {
+  async (thunkAPI) => {
     try {
+      const { token } = JSON.parse(localStorage.getItem('ebikeData'));
+
       const res = await axios.get(EBIKE_URL, {
         headers: {
           'content-type': 'application/json',
-          Authorization: `Bearer ${data.token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -40,7 +42,7 @@ const ebikeSlice = createSlice({
       .addCase(fetchEbike.fulfilled, (state, { payload }) => ({
         ...state,
         isLoading: false,
-        ebikes: payload.data,
+        ebikes: payload,
       }))
       .addCase(fetchEbike.rejected, (state) => ({
         ...state,
@@ -49,6 +51,6 @@ const ebikeSlice = createSlice({
   },
 });
 
-export const { } = ebikeSlice.actions;
+// export const { } = ebikeSlice.actions;
 
 export default ebikeSlice.reducer;

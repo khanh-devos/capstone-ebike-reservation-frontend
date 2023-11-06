@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function EbikeIndex() {
   const { ebikes } = useSelector((state) => state.ebikeSlice);
@@ -9,7 +10,7 @@ export default function EbikeIndex() {
 
       {
       ebikes.map((item) => (
-        <div>{item.name}</div>
+        <div key={uuidv4()}>{item.name}</div>
       ))
     }
 
