@@ -6,7 +6,7 @@ import { HiXMark } from 'react-icons/hi2';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { TfiGoogle } from 'react-icons/tfi';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/logo-capstone.svg';
+import logo from '../img/E-bikebackground.png';
 import useClickOutside from '../hooks/useClickOutside';
 
 function NavigationPanel() {
@@ -31,12 +31,12 @@ function NavigationPanel() {
         </button>
         <img className=" w-1/2 h-1/5 block mx-auto" src={logo} alt="car logo" />
         <div className="flex flex-col w-full h-4/5 absolute md:left-0 bottom-0 md:pl-3 justify-between">
-          <ul>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">VEHICLES</NavLink></li>
+          <ul className="mt-10">
+            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">E-BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">RESERVATION</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">MY RESERVATIONS</NavLink></li>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">ADD CAR</NavLink></li>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE CAR</NavLink></li>
+            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">ADD BIKE</NavLink></li>
+            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
           </ul>
 
           <div>
