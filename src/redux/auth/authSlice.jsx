@@ -51,15 +51,7 @@ export const fetchSignup = createAsyncThunk(
 const authSlice = createSlice({
   name: 'authSlice',
   initialState,
-  reducers: {
-    refresh: (state, { payload }) => ({
-      ...state,
-      user: payload.user,
-      token: payload.token,
-      isLogined: true,
-    }),
-
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchLogin.pending, (state) => ({
@@ -114,7 +106,5 @@ const authSlice = createSlice({
       }));
   },
 });
-
-export const { refresh } = authSlice.actions;
 
 export default authSlice.reducer;
