@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import BikeCard from './BikeCard';
 
 const BikeCarousel = ({ bikes }) => {
@@ -14,15 +15,25 @@ const BikeCarousel = ({ bikes }) => {
 
   return (
     <div className="carousel-container">
-      <button onClick={() => moveSlide('prev')}>Previous</button>
+      <button type="button" onClick={() => moveSlide('prev')}>Previous</button>
       <div className="bike-slides">
-        {bikes.slice(currentIndex, currentIndex + 3).map((bike, index) => (
-          <BikeCard key={index} bike={bike} />
+        {bikes.slice(currentIndex, currentIndex + 3).map((bike) => (
+          <BikeCard key={bike.id} bike={bike} />
         ))}
       </div>
-      <button onClick={() => moveSlide('next')}>Next</button>
+      <button type="button" onClick={() => moveSlide('next')}>Next</button>
     </div>
   );
+};
+
+BikeCarousel.propTypes = {
+  bikes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default BikeCarousel;

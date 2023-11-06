@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css';
 import NavigationPanel from './NavigationPanel';
-import BikeCarousel from './BikeCarousel'
+import BikeCarousel from './BikeCarousel';
 
 const Mainpage = () => (
   <div className="main-conteiner-mainpage">
@@ -11,7 +11,7 @@ const Mainpage = () => (
         <h4 className="subtitle-main-page">Please select a Vespa Model</h4>
       </div>
       <div className="carousel-container">
-       <BikeCarousel />
+        <BikeCarousel />
       </div>
     </div>
     <NavigationPanel />
