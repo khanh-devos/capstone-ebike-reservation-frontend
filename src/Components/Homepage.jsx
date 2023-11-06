@@ -1,5 +1,6 @@
 import '../index.css';
 import { NavLink } from 'react-router-dom';
+import NavigationPanel from './NavigationPanel';
 
 const Homepage = () => (
   <div className="bgcontainer">
@@ -22,6 +23,7 @@ const Homepage = () => (
         </ul>
       </div>
     </div>
+    <NavigationPanel />
   </div>
 );
 
