@@ -55,7 +55,11 @@ const BikeCarousel = ({ bikes }) => {
 
   return (
     <div className="carousel-container">
-      <button type="button" onClick={() => moveSlide('prev')}>Previous</button>
+      <button type="button" className="arrow-left" onClick={() => moveSlide('prev')}>
+        {' '}
+        { '<' }
+        {' '}
+      </button>
 
       <div className="bike-slides">
         {mockBikes.slice(currentIndex, currentIndex + 3).map((bike) => (
@@ -63,7 +67,11 @@ const BikeCarousel = ({ bikes }) => {
         ))}
       </div>
 
-      <button type="button" onClick={() => moveSlide('next')}>Next</button>
+      <button type="button" className="arrow-right" onClick={() => moveSlide('next')}>
+        {' '}
+        { '>' }
+        {' '}
+      </button>
     </div>
   );
 };

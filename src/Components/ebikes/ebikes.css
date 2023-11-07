@@ -1,9 +1,10 @@
 
 .carousel-container {
-  display: grid;
   width: 100%;
-  grid-template-columns: 1fr 5fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-titles {
@@ -67,6 +68,7 @@
   margin-bottom: 25px;
   text-align: center;
   padding-top: 20px;
+  width: 190px;
 }
 
 .container-icons-card {
@@ -104,7 +106,7 @@
   border-radius: 100px;
   padding: 6px;
   color: black;
-  background-color: darkgray;
+  background-color: #7dd97d;
 }
 
 .card {
@@ -112,4 +114,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.arrow-right {
+  background-color: #199919;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: left;
+  padding-left: 15px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.arrow-left {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
