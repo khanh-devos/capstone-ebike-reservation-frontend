@@ -6,15 +6,23 @@ import { HiXMark } from 'react-icons/hi2';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { TfiGoogle } from 'react-icons/tfi';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import logo from '../img/E-bikebackground.png';
 import useClickOutside from '../hooks/useClickOutside';
+import { logout } from '../redux/auth/authSlice';
 
 function NavigationPanel() {
+  const dispatch = useDispatch();
+
   const [menu, setMenu] = useState(false);
   const navbarRef = useRef(null);
 
   const removeNavPanel = () => {
     setMenu(false);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   useClickOutside(navbarRef, removeNavPanel);
@@ -38,7 +46,15 @@ function NavigationPanel() {
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">ADD BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/login">LOG IN</NavLink></li>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/logout">LOG OUT</NavLink></li>
+            <li className="">
+              <NavLink
+                onClick={() => { removeNavPanel(); handleLogout(); }}
+                className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block"
+                to="/logout"
+              >
+                LOG OUT
+              </NavLink>
+            </li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/signup">SIGN UP</NavLink></li>
           </ul>
 
