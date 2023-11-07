@@ -7,19 +7,19 @@ const mockBikes = [
   {
     id: 1,
     name: 'EcoRider 500',
-    description: 'Una bicicleta eléctrica elegante y eficiente para tus desplazamientos diarios.',
+    description: 'An elegant and efficient electric bicycle for your daily commute.',
     image: 'https://media.bcompras.com.mx/iFSz4S0PZCusaaKK1RvtSbd2.webp',
   },
   {
     id: 2,
     name: 'VoltXpress ZR2',
-    description: 'La compañera perfecta para explorar la ciudad con velocidad y comodidad.',
+    description: 'The perfect companion to explore the city with speed and comfort.',
     image: 'https://http2.mlstatic.com/D_NQ_NP_2X_904305-MLA48736887155_012022-F.webp',
   },
   {
     id: 3,
     name: 'UrbanGlide Pro',
-    description: 'Una bicicleta eléctrica versátil y moderna que se adapta a tu estilo de vida.',
+    description: 'A versatile and modern electric bicycle that adapts to your lifestyle.',
     image: 'https://media.bcompras.com.mx/tVmMvJPOxrykcPSk2roMyqOx.webp',
   },
   {
@@ -31,13 +31,13 @@ const mockBikes = [
   {
     id: 5,
     name: 'SpeedRider S1',
-    description: 'Una bicicleta eléctrica de alto rendimiento diseñada para aventuras emocionantes.',
+    description: 'Experience the freedom of moving sustainably with this e-bike.',
     image: 'https://media.bcompras.com.mx/F0OGrsgu8eZV3kw2MLbpJnSJ.webp',
   },
   {
     id: 6,
     name: 'CityCommuter E7',
-    description: 'Recorre la ciudad con estilo y eficiencia en esta e-bike moderna.',
+    description: 'Ride around town in style and efficiency on this modern e-bike.',
     image: 'https://media.bcompras.com.mx/yYuGNeaCO1J1aHHsQhbhzwbJ.webp',
   },
 ];
