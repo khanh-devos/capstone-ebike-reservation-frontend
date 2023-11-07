@@ -4,5 +4,63 @@
   width: 100%;
   grid-template-columns: 1fr 5fr 1fr;
   gap: 1rem;
-  border: 1px solid red;
+}
+
+.container-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.title-main-page {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.subtitle-main-page {
+  font-weight: 300;
+  font-size: 12px;
+  color: darkgrey;
+  margin-bottom: 25px;
+}
+
+.bike-slides {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#hamburg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.img-bike {
+  height: 165px;
+}
+
+.name-bike {
+  font-weight: 700;
+}
+
+.bike-description {
+  font-weight: 300;
+  font-size: 12px;
+  color: darkgrey;
+  margin-bottom: 25px;
+  text-align: center;
+  padding-top: 20px;
 }
