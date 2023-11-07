@@ -1,40 +1,40 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import BikeCard from './BikeCard';
 import './ebikes.css';
+import BikeCard from './BikeCard';
 
-// const mock_bikes = [
-//   {
-//     id: 1,
-//     name: 'bike 1',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   },
-//   {
-//     id: 2,
-//     name: 'bike 2',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   },
-//   {
-//     id: 3,
-//     name: 'bike 3',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   },
-//   {
-//     id: 4,
-//     name: 'bike 4',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   },
-//   {
-//     id: 5,
-//     name: 'bike 5',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   },
-//   {
-//     id: 6,
-//     name: 'bike 6',
-//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
-//   }
-// ]
+const mockBikes = [
+  {
+    id: 1,
+    name: 'bike 1',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+  {
+    id: 2,
+    name: 'bike 2',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+  {
+    id: 3,
+    name: 'bike 3',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+  {
+    id: 4,
+    name: 'bike 4',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+  {
+    id: 5,
+    name: 'bike 5',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+  {
+    id: 6,
+    name: 'bike 6',
+    image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg',
+  },
+];
 
 const BikeCarousel = ({ bikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,7 +52,7 @@ const BikeCarousel = ({ bikes }) => {
       <button type="button" onClick={() => moveSlide('prev')}>Previous</button>
 
       <div className="bike-slides">
-        {bikes.slice(currentIndex, currentIndex + 3).map((bike) => (
+        {mockBikes.slice(currentIndex, currentIndex + 3).map((bike) => (
           <BikeCard key={bike.id} bike={bike} />
         ))}
       </div>
