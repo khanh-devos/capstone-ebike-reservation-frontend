@@ -64,3 +64,25 @@
   text-align: center;
   padding-top: 20px;
 }
+
+.container-icons-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+}
+
+.container-icons-card li {
+  border: 1.5px solid darkgrey;
+  border-radius: 100px;
+  padding: 6px;
+  color: darkgrey;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
