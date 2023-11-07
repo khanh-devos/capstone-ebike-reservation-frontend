@@ -6,15 +6,18 @@ import './ebikes.css';
 // const mock_bikes = [
 //   {
 //     id: 1,
-//     name: 'bike 1'
+//     name: 'bike 1',
+//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
 //   },
 //   {
 //     id: 2,
-//     name: 'bike 2'
+//     name: 'bike 2',
+//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
 //   },
 //   {
 //     id: 3,
-//     name: 'bike 3'
+//     name: 'bike 3',
+//     image: 'https://www.clarin.com/img/2019/05/29/tIRVWZxMG_1256x620__1.jpg'
 //   }
 // ]
 
