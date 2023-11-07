@@ -3,6 +3,21 @@ import PropTypes from 'prop-types';
 import BikeCard from './BikeCard';
 import './ebikes.css';
 
+// const mock_bikes = [
+//   {
+//     id: 1,
+//     name: 'bike 1'
+//   },
+//   {
+//     id: 2,
+//     name: 'bike 2'
+//   },
+//   {
+//     id: 3,
+//     name: 'bike 3'
+//   }
+// ]
+
 const BikeCarousel = ({ bikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
