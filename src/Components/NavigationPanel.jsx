@@ -29,7 +29,7 @@ function NavigationPanel() {
 
   return (
     <>
-      <button type="button" className="md:fixed top-5 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
+      <button type="button" id="hamburg" className="md:fixed top-5 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
         <HiMenuAlt4 className="text-[34px]" />
       </button>
       {menu && (
