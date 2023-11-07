@@ -96,6 +96,15 @@
   border-radius: 100px;
   padding: 6px;
   color: darkgrey;
+  cursor: pointer;
+}
+
+.container-icons-card li:hover {
+  border: 1.5px solid rgb(13, 13, 13);
+  border-radius: 100px;
+  padding: 6px;
+  color: black;
+  background-color: darkgray;
 }
 
 .card {
