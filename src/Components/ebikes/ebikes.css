@@ -1,0 +1,8 @@
+
+.carousel-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 1rem;
+  border: 1px solid red;
+}

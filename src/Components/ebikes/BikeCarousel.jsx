@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import BikeCard from './BikeCard';
+import './ebikes.css';
 
 const BikeCarousel = ({ bikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,11 +17,13 @@ const BikeCarousel = ({ bikes }) => {
   return (
     <div className="carousel-container">
       <button type="button" onClick={() => moveSlide('prev')}>Previous</button>
+
       <div className="bike-slides">
-        {bikes.slice(currentIndex, currentIndex + 3).map((bike) => (
+        {bikes.slice(currentIndex, currentIndex + 1).map((bike) => (
           <BikeCard key={bike.id} bike={bike} />
         ))}
       </div>
+
       <button type="button" onClick={() => moveSlide('next')}>Next</button>
     </div>
   );
