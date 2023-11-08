@@ -33,8 +33,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/ebikes" element={<Mainpage />} />
           <Route path="/reservations" element={<Reservations />} />
-          <Route path="/reservations/new" element={<NewReservation />} />
-          <Route path="/bike/:id" element={<SpecificBike />} />
+          <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
+          <Route path="/ebikes/:id" element={<SpecificBike />} />
         </Routes>
       </div>
     </Router>

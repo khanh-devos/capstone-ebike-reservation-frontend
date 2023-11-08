@@ -49,7 +49,7 @@ const mockBikes = [
   },
 ];
 
-const BikeCarousel = ({ bikes }) => {
+const BikeCarousel = ({ bikes: mockBikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 

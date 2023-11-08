@@ -16,7 +16,7 @@ export default function SpecificBike() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleReserve = () => navigate('/reservations/new');
+  const handleReserve = () => navigate(`/ebikes/${id}/reservations/new`);
 
   return (
     <div>

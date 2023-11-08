@@ -8,7 +8,7 @@ import {
 function BikeCard({ bike }) {
   const navigate = useNavigate();
 
-  const clickAbike = () => navigate(`/bike/${bike.id}`);
+  const clickAbike = () => navigate(`/ebikes/${bike.id}`);
 
   return (
     <div className="card" onClick={clickAbike}>
