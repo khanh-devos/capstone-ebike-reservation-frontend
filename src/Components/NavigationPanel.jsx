@@ -58,12 +58,12 @@ function NavigationPanel() {
           </ul>
 
           <div>
-            <ul className="">
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoTwitter /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoFacebook /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><TfiGoogle /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoInstagram /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoPinterestAlt /></NavLink></li>
+            <ul className="icons-navigation-panel">
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoTwitter /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoFacebook /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><TfiGoogle /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoInstagram /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoPinterestAlt /></NavLink></li>
             </ul>
             <p className="text-[8px] mx-0 text-center mb-3">@ 2023 PLAGGIO & CSPA - PIVA</p>
           </div>
