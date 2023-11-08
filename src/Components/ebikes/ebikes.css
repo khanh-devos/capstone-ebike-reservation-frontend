@@ -1,0 +1,147 @@
+
+.carousel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.title-main-page {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.subtitle-main-page {
+  font-weight: 300;
+  font-size: 12px;
+  color: darkgrey;
+  margin-bottom: 25px;
+}
+
+.bike-slides {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#hamburg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.img-bike {
+  height: 165px;
+}
+
+.name-bike {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  width: 140px;
+  text-align: center;
+}
+
+.bike-description {
+  font-weight: 300;
+  font-size: 12px;
+  color: darkgrey;
+  margin-bottom: 25px;
+  text-align: center;
+  padding-top: 20px;
+  width: 190px;
+}
+
+.container-icons-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  flex: 1;
+  padding: 10px;
+}
+
+.name-bike::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, darkgray 2px, transparent 2px);
+  background-size: 4px 2px;
+  background-repeat: repeat-x;
+}
+
+.container-icons-card li {
+  border: 1.5px solid darkgrey;
+  border-radius: 100px;
+  padding: 6px;
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.container-icons-card li:hover {
+  border: 1.5px solid rgb(13, 13, 13);
+  border-radius: 100px;
+  padding: 6px;
+  color: black;
+  background-color: #7dd97d;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.arrow-right {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: left;
+  padding-left: 15px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.arrow-left.active {
+  background-color: #199919;
+}
+
+.arrow-right.active {
+  background-color: #199919;
+}

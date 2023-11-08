@@ -8,9 +8,9 @@ import './index.css';
 import Loginpage from './Components/auth/Loginpage';
 import Homepage from './Components/Homepage';
 import { fetchEbike } from './redux/ebike/ebikeSlice';
-import EbikeIndex from './Components/ebike/EbikeIndex';
 import Signup from './Components/auth/Signup';
 import MyReservations from './Components/MyReservations';
+import Mainpage from './Components/ebikes/Mainpage';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/ebikes" element={<EbikeIndex />} />
+          <Route path="/ebikes" element={<Mainpage />} />
           <Route path="/myreservations" element={<MyReservations />} />
         </Routes>
       </div>

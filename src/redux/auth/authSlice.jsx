@@ -51,7 +51,18 @@ export const fetchSignup = createAsyncThunk(
 const authSlice = createSlice({
   name: 'authSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem('ebikeData');
+
+      return {
+        ...state,
+        user: {},
+        isLogined: false,
+        token: '',
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchLogin.pending, (state) => ({
@@ -106,5 +117,7 @@ const authSlice = createSlice({
       }));
   },
 });
+
+export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;
