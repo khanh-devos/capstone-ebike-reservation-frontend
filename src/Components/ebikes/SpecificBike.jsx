@@ -63,7 +63,10 @@ export default function SpecificBike() {
       <div className="conatienr-img-specific">
         <img className="img-specific" src={bikeImg} alt="" />
       </div>
-      <h2 className="name-specific-bike">{bikeName}</h2>
+      <div className="titles-specific-container">
+        <h2 className="name-specific-bike">{bikeName}</h2>
+        <p>-£350 deposit any Vespa Purchaset</p>
+      </div>
       <div className="payment-c">
         <div className="specification-1">
           <p className="left-text">Finance free</p>
@@ -81,6 +84,18 @@ export default function SpecificBike() {
           <p className="left-text">Duration</p>
           <p className="right-text">48 Months</p>
         </div>
+      </div>
+      <div className="APR-contaeiner">
+        <p className="APR-percentage">5.9% APR</p>
+        <p className="representative-text">Representative</p>
+      </div>
+      <div className="discover-contaeiner">
+        <p className="more-models">DISCOVER MORE MODELS</p>
+        <p className="arrow-more-models">
+          {' '}
+          {'>'}
+          {' '}
+        </p>
       </div>
       <button onClick={handleReserve} type="button">Reserve</button>
     </div>
