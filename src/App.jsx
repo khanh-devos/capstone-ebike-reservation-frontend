@@ -10,6 +10,7 @@ import Homepage from './Components/Homepage';
 import { fetchEbike } from './redux/ebike/ebikeSlice';
 import EbikeIndex from './Components/ebike/EbikeIndex';
 import Signup from './Components/auth/Signup';
+import MyReservations from './Components/MyReservations';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,7 +19,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchEbike());
   }, [dispatch, isLogined]);
-
   return (
     <Router>
 
@@ -28,6 +28,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ebikes" element={<EbikeIndex />} />
+          <Route path="/myreservations" element={<MyReservations />} />
         </Routes>
       </div>
     </Router>
