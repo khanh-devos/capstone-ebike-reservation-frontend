@@ -1,7 +1,7 @@
 // src/components/EbikeForm.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import addEbike from '../redux/actions/ebikeActions';
+import { addEbike } from '../redux/actions/ebikeActions';
 
 const EbikeForm = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ const EbikeForm = () => {
     <form onSubmit={handleSubmit}>
       <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
       <input type="text" name="model" value={formData.model} onChange={handleChange} placeholder="Model" />
-      <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" />
+      <input type="" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" />
       <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
       <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
       <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="City" />

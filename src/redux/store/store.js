@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
   ebike: ebikeReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk)); // Apply thunk middleware
 
 export default store;
