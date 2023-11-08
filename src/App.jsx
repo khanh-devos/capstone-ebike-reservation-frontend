@@ -10,6 +10,7 @@ import Homepage from './Components/Homepage';
 import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
 import Mainpage from './Components/ebikes/Mainpage';
+import Ebikeform from './Components/ebikes/Ebikeform';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ebikes" element={<Mainpage />} />
+          <Route path="/addbike" element={<Ebikeform />} />
         </Routes>
       </div>
     </Router>
