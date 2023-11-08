@@ -24,7 +24,7 @@ export const fetchEbike = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('login failed');
+      return thunkAPI.rejectWithValue('ebikes fetching failed');
     }
   },
 );

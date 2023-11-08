@@ -30,6 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "mystart": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns node_modules/jest/bin/jest.js",
     "eject": "react-scripts eject"
