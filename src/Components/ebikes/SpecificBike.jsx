@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchReservation } from '../../redux/reservation/reservationSlice';
+// import { fetchReservation } from '../../redux/reservation/reservationSlice';
 
 // const mockBike = [
 //   {
@@ -21,8 +21,7 @@ export default function SpecificBike() {
   return (
     <div>
       Specific Bike
-
-      <button onClick={handleReserve}>Reserve</button>
+      <button onClick={handleReserve} type="button">Reserve</button>
     </div>
   );
 }

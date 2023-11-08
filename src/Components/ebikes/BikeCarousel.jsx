@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './ebikes.css';
 import BikeCard from './BikeCard';
 
@@ -110,6 +110,8 @@ const BikeCarousel = ({ bikes }) => {
   );
 };
 
-BikeCarousel.propTypes = {};
+BikeCarousel.propTypes = {
+  bikes: PropTypes.shape.isRequired,
+};
 
 export default BikeCarousel;
