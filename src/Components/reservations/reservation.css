@@ -1,0 +1,13 @@
+.reservation-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 1px solid red;
+}
+
+.reservation-input {
+  border: 1px solid black;
+}

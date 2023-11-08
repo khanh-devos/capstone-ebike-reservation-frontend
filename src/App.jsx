@@ -12,6 +12,8 @@ import Signup from './Components/auth/Signup';
 import Mainpage from './Components/ebikes/Mainpage';
 import Reservations from './Components/reservations/Reservations';
 import { fetchReservation } from './redux/reservation/reservationSlice';
+import SpecificBike from './Components/ebikes/SpecificBike';
+import NewReservation from './Components/reservations/NewReservation';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +33,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/ebikes" element={<Mainpage />} />
           <Route path="/reservations" element={<Reservations />} />
+          <Route path="/reservations/new" element={<NewReservation />} />
+          <Route path="/bike/:id" element={<SpecificBike />} />
         </Routes>
       </div>
     </Router>

@@ -3,7 +3,6 @@ import ebikeSlice from './ebike/ebikeSlice';
 import authSlice from './auth/authSlice';
 import reservationSlice from './reservation/reservationSlice';
 
-
 const store = configureStore({
   reducer: {
     authSlice,

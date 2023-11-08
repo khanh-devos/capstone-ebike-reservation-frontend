@@ -1,15 +1,12 @@
-
-
 // Singup.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSignup } from '../../redux/auth/authSlice';
-import './auth.css';
+import './reservation.css';
 
-function NewReservation() {
+export default function NewReservation() {
   const dispatch = useDispatch();
-
-  const { ebikes } = useSelector(state => state.ebikeSlice)
+  const { ebikes } = useSelector((state) => state.ebikeSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,37 +34,45 @@ function NewReservation() {
       <h1 className="text-black text-5xl">New Reservation</h1>
 
       <form className="reservation-form" onSubmit={handleSubmit}>
-        <input
-          className="reservation-input"
-          placeholder="Starting date"
-          type="text"
-          name="startingDate"
-          autoComplete
-          required
-        />
 
-        <input
-          className="reservation-input"
-          placeholder="Ending date"
-          type="date"
-          name="endingDate"
-          required
-        />
+        <div>
+          <h5>Starting Date : </h5>
+          <input
+            className="reservation-input"
+            placeholder="Starting date"
+            type="date"
+            name="startingDate"
+            autoComplete
+            required
+          />
+        </div>
 
-        <select name="city">
-        {
-          ebikes.map((item) => (
-            <option value={`${item.id}`}>{item.city}</option>
-          ))
-        }
-        </select>
+        <div>
+          <h5>Ending Date : </h5>
+          <input
+            className="reservation-input"
+            placeholder="Ending date"
+            type="date"
+            name="endingDate"
+            required
+          />
+        </div>
 
-        <button type="submit">Sign up</button>
+        <div>
+          <h5>City : </h5>
+          <select name="city">
+            {
+            ebikes.map((item) => (
+              <option key={item.id} value={`${item.id}`}>{item.city}</option>
+            ))
+          }
+          </select>
+        </div>
+
+        <button type="submit">Book</button>
 
       </form>
 
     </div>
   );
 }
-
-export default Signup;

@@ -33,7 +33,7 @@ const reservationSlice = createSlice({
   name: 'fetchReservations',
   initialState,
   reducers: {
-    add: (state) => (state)
+    add: (state) => (state),
   },
   extraReducers: (builder) => {
     builder
