@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservation/reservationSlice';
 import './reservations.css';
+import NavigationPanel from '../NavigationPanel';
 
 function MyReservations() {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ function MyReservations() {
   const { user } = useSelector((state) => state.authSlice);
   useEffect(() => {
     dispatch(fetchReservations());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="flex justify-center  items-center container">
       <h1 className="title">
@@ -39,6 +40,7 @@ function MyReservations() {
           )
           : <p>no reservations</p>}
       </div>
+      <NavigationPanel />
     </div>
   );
 }

@@ -11,7 +11,6 @@ import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
 import MyReservations from './Components/reservations/MyReservations';
 import Mainpage from './Components/ebikes/Mainpage';
-import NavigationPanel from './Components/NavigationPanel';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +31,6 @@ function App() {
           <Route path="/myreservations" element={<MyReservations />} />
         </Routes>
       </div>
-      <NavigationPanel />
     </Router>
   );
 }

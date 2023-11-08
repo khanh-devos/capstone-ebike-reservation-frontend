@@ -21,7 +21,6 @@ export const fetchReservations = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log('redux res', res.data);
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue('fetch reservation failed');
