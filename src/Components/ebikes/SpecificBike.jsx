@@ -52,7 +52,7 @@ export default function SpecificBike() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const bike = mockBikes.find((b) => b.id === parseInt(id));
+  const bike = mockBikes.find((b) => b.id === parseInt('42', 10));
   const bikeName = bike ? bike.name : 'Bike not found';
   const bikeImg = bike ? bike.image : 'Bike image not found';
 
