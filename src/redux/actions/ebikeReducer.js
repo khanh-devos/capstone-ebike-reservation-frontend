@@ -1,4 +1,4 @@
-// ebikeReducer.js
+// ebikeReducer.js and more information about Redux reducers
 const initialState = {
   ebikes: [],
   error: null,
