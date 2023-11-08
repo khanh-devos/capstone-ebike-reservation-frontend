@@ -137,3 +137,23 @@
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
 }
+
+.arrow-right {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: left;
+  padding-left: 15px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.arrow-left.active {
+  background-color: #199919;
+}
+
+.arrow-right.active {
+  background-color: #199919;
+}
+
