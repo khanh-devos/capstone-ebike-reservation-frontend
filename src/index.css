@@ -11,6 +11,16 @@
   font-size: 16px;
 }
 
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.App {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 /* this part is based on the home page design */
 .bgcontainer {
   background-color: #ffbf00;
