@@ -41,8 +41,7 @@ function NavigationPanel() {
         <div className="flex flex-col w-full h-4/5 absolute md:left-0 bottom-0 md:pl-3 justify-between">
           <ul className="mt-10">
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">RESERVATION</NavLink></li>
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">MY RESERVATIONS</NavLink></li>
+            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/reservations">MY RESERVATIONS</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">ADD BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/login">LOG IN</NavLink></li>
@@ -59,12 +58,12 @@ function NavigationPanel() {
           </ul>
 
           <div>
-            <ul className="">
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoTwitter /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoFacebook /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><TfiGoogle /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoInstagram /></NavLink></li>
-              <li className=""><NavLink onClick={removeNavPanel} to="/"><BiLogoPinterestAlt /></NavLink></li>
+            <ul className="icons-navigation-panel">
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoTwitter /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoFacebook /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><TfiGoogle /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoInstagram /></NavLink></li>
+              <li className="items-navigation-panel"><NavLink onClick={removeNavPanel} to="/"><BiLogoPinterestAlt /></NavLink></li>
             </ul>
             <p className="text-[8px] mx-0 text-center mb-3">@ 2023 PLAGGIO & CSPA - PIVA</p>
           </div>

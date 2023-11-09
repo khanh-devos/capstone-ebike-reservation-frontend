@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './ebikes.css';
 import BikeCard from './BikeCard';
 
@@ -49,7 +49,8 @@ const mockBikes = [
   },
 ];
 
-const BikeCarousel = () => {
+// eslint-disable-next-line no-unused-vars
+const BikeCarousel = ({ bikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -110,6 +111,8 @@ const BikeCarousel = () => {
   );
 };
 
-BikeCarousel.propTypes = {};
+BikeCarousel.propTypes = {
+  bikes: PropTypes.shape.isRequired,
+};
 
 export default BikeCarousel;

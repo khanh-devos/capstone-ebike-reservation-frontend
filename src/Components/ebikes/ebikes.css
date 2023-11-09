@@ -114,6 +114,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .arrow-left {
@@ -144,4 +145,124 @@
 
 .arrow-right.active {
   background-color: #199919;
+}
+
+.container-specific-bike {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 40px;
+}
+
+.back-button {
+  background-color: #199919;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.img-rainbow {
+  height: 100px;
+  width: 100px;
+}
+
+.container-rainbow {
+  background-color: #199919;
+  width: 20px;
+  height: 20px;
+}
+
+.titles-specific-container {
+  text-align: right;
+  padding-bottom: 25px;
+}
+
+.name-specific-bike {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.deposit-text {
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.specification-1 {
+  font-size: 11px;
+  display: flex;
+  background-color: rgb(210, 209, 209);
+  padding: 4px;
+  justify-content: space-between;
+}
+
+.specification-2 {
+  font-size: 11px;
+  display: flex;
+  background-color: white;
+  padding: 4px;
+  justify-content: space-between;
+}
+
+.specification-3 {
+  font-size: 11px;
+  display: flex;
+  background-color: rgb(210, 209, 209);
+  padding: 4px;
+  justify-content: space-between;
+}
+
+.specification-4 {
+  font-size: 11px;
+  display: flex;
+  background-color: white;
+  padding: 4px;
+  justify-content: space-between;
+}
+
+.APR-contaeiner {
+  display: flex;
+}
+
+.APR-percentage {
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+.discover-contaeiner {
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  align-items: end;
+  justify-content: right;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.btn-reserve {
+  background-color: #199919;
+  padding: 5px 15px 5px 15px;
+  border-radius: 100px;
+  color: azure;
+  margin-left: 150px;
+}
+
+.img-specific {
+  height: 350px;
+  padding-right: 60px;
+}
+
+.rainbow-contaienr {
+  display: flex;
+  width: 180px;
+  justify-content: right;
+}
+
+.rainbow-img {
+  height: 95px;
 }
