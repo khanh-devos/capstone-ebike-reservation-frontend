@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
@@ -10,15 +10,24 @@ import Homepage from './Components/Homepage';
 import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
 import Mainpage from './Components/ebikes/Mainpage';
-import Ebikeform from './Components/ebikes/Ebikeform';
 
 function App() {
   const dispatch = useDispatch();
-  const { isLogined } = useSelector((state) => state.authSlice);
+  const { message } = useSelector((state) => state.authSlice);
+  const [showMessage, setShowingMessage] = useState(false);
 
   useEffect(() => {
     dispatch(fetchEbike());
-  }, [dispatch, isLogined]);
+    dispatch(fetchLocations());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setShowingMessage(true);
+    setTimeout(() => {
+      setShowingMessage(false);
+      dispatch(resetMessage());
+    }, 2000);
+  }, [message, dispatch]);
 
   return (
     <Router>
@@ -29,7 +38,6 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ebikes" element={<Mainpage />} />
-          <Route path="/addbike" element={<Ebikeform />} />
         </Routes>
       </div>
     </Router>
