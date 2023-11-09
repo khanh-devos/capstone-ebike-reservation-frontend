@@ -1,42 +1,53 @@
-// src/components/EbikeForm.js
+// YourComponent.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import addEbike from '../redux/actions/ebikeActions';
 
-const EbikeForm = () => {
-  const [formData, setFormData] = useState({
+function YourComponent() {
+  const dispatch = useDispatch();
+
+  const [ebikeData, setEbikeData] = useState({
     name: '',
     model: '',
     image: '',
     description: '',
-    price: '',
+    price: 0,
     city: '',
-    weight: '',
+    weight: 0,
   });
 
-  const dispatch = useDispatch();
+  const handleChange = (e) => {
+    setEbikeData({ ...ebikeData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addEbike(formData));
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    dispatch(addEbike(ebikeData));
+    setEbikeData({
+      name: '',
+      model: '',
+      image: '',
+      description: '',
+      price: 0,
+      city: '',
+      weight: 0,
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
-      <input type="text" name="model" value={formData.model} onChange={handleChange} placeholder="Model" />
-      <input type="" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" />
-      <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
-      <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
-      <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="City" />
-      <input type="number" name="weight" value={formData.weight} onChange={handleChange} placeholder="Weight" />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" value={ebikeData.name} onChange={handleChange} placeholder="Name" />
+        <input type="text" name="model" value={ebikeData.model} onChange={handleChange} placeholder="Model" />
+        <input type="text" name="image" value={ebikeData.image} onChange={handleChange} placeholder="Image URL" />
+        <textarea name="description" value={ebikeData.description} onChange={handleChange} placeholder="Description" />
+        <input type="number" name="price" value={ebikeData.price} onChange={handleChange} placeholder="Price" />
+        <input type="text" name="city" value={ebikeData.city} onChange={handleChange} placeholder="City" />
+        <input type="number" name="weight" value={ebikeData.weight} onChange={handleChange} placeholder="Weight" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
-};
+}
 
-export default EbikeForm;
+export default YourComponent;
