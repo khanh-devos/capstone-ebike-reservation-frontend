@@ -62,6 +62,7 @@ const authSlice = createSlice({
         token: '',
       };
     },
+    resetMessage: (state) => ({ ...state, message: '' }),
   },
   extraReducers: (builder) => {
     builder
@@ -118,6 +119,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, resetMessage } = authSlice.actions;
 
 export default authSlice.reducer;
