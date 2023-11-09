@@ -1,13 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import ebikeSlice from './ebike/ebikeSlice';
 import authSlice from './auth/authSlice';
-import reservationSlice from './reservation/reservationSlice';
+
+import locationSlice from './location/locationSlice';
+import myReservationSlice from './reservation/myReservationSlice';
+
 
 const store = configureStore({
   reducer: {
+    locationSlice,
     authSlice,
     ebikeSlice,
-    reservationSlice,
+    myReservationSlice,
   },
 });
 

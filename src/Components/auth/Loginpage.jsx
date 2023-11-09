@@ -1,9 +1,13 @@
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchLogin } from '../../redux/auth/authSlice';
 import './auth.css';
 
 function Loginpage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLogined } = useSelector((state) => state.authSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +22,13 @@ function Loginpage() {
     form.reset();
   };
 
+  useEffect(() => {
+    if (isLogined) navigate('/ebikes');
+  }, [isLogined, navigate]);
+
   return (
-    <div className="mx-0 px-28">
-      <h1 className="text-black text-5xl">Login Welcom here</h1>
+    <div className="login-page">
+      <h2><strong>WELCOME</strong></h2>
 
       <form className="login-form" onSubmit={handleSubmit}>
         <input
@@ -37,7 +45,7 @@ function Loginpage() {
           type="password"
           name="password"
         />
-        <button type="submit">Login</button>
+        <button className="submit-btn" type="submit">Login</button>
 
       </form>
 

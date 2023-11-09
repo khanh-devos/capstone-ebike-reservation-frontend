@@ -53,3 +53,40 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.icons-navigation-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.items-navigation-panel {
+  padding: 5px;
+}
+
+.myApp {
+  position: relative;
+}
+
+.message-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 58, 58, 0.1);
+}
+
+.show-message {
+  background: green;
+  max-height: 100px;
+  max-width: 300px;
+  min-width: 200px;
+  z-index: 1;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
