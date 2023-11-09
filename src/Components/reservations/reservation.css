@@ -1,3 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.card_container {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.table_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.table_item {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table_header_item {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color: #97bf0f;
+  color: white;
+  font-weight: bold;
+}
+
 .reservation-page {
   padding: 10% 10%;
 }

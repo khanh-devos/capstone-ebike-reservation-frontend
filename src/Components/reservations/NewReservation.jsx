@@ -3,9 +3,8 @@ import React from 'react';
 import { v4 } from 'uuid';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSignup } from '../../redux/auth/authSlice';
 import './reservation.css';
-import { add } from '../../redux/reservation/myReservationSlice';
+import { add } from '../../redux/reservation/reservationSlice';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
