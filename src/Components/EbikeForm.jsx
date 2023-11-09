@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // import addEbike from '../redux/actions/ebikeActions';
-import  {TextField}  from '@mui/material';
 import { postEbike } from '../redux/ebike/ebikeSlice';
 
 function YourComponent() {
@@ -38,13 +37,14 @@ function YourComponent() {
 
   return (
     <div className="mainclass">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="getInput">
+        <h1>Add your new ebike</h1>
         <div className="">
-          <TextField name="name" value={ebikeData.name} onChange={handleChange} label="set your name" variant="outlined" type="text" />
+          <input required name="name" value={ebikeData.name} onChange={handleChange} label="set your name" type="text" placeholder="add your name" />
         </div>
         <div className="">
-          <select type="text" name="model" value={ebikeData.model} onChange={handleChange} placeholder="Model">
-            <option value="Pedego-bike">Pedego</option>
+          <select type="text" required name="model" value={ebikeData.model} onChange={handleChange} placeholder="Model">
+            <option selected hidden value="Pedego-bike">Select your ebike</option>
             <option value="Rad Power Bikes">Rad Power Bikes</option>
             <option value="Specialized Turbo">Rad Power Bikes</option>
             <option value="Haibike">Haibike</option>
@@ -57,19 +57,30 @@ function YourComponent() {
           </select>
         </div>
         <div className="">
-          <input type="text" name="image" value={ebikeData.image} onChange={handleChange} placeholder="Image URL" />
+          <input type="file" required name="image" value={ebikeData.image} onChange={handleChange} placeholder="Image URL" />
         </div>
         <div className="">
-          <textarea name="description" value={ebikeData.description} onChange={handleChange} placeholder="Description" />
+          <textarea name="description" required value={ebikeData.description} onChange={handleChange} placeholder="Description" />
         </div>
         <div className="">
-          <input type="number" name="price" value={ebikeData.price} onChange={handleChange} placeholder="Price" />
+          <input type="number" required name="price" value={ebikeData.price} onChange={handleChange} placeholder="Price" />
         </div>
         <div className="">
-          <input type="text" name="city" value={ebikeData.city} onChange={handleChange} placeholder="City" />
+          <select type="text" required name="city" value={ebikeData.city} onChange={handleChange} placeholder="City">
+            <option selected hidden value="Pedego-bike">Select your city</option>
+            <option value="Kigali">Kigali</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="India">India</option>
+            <option value="Congo(drc)">Congo(drc)</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Uganda">Uganda</option>
+          </select>
         </div>
         <div className="">
-          <input type="number" name="weight" value={ebikeData.weight} onChange={handleChange} placeholder="Weight" />
+          <input type="number" required name="weight" value={ebikeData.weight} onChange={handleChange} placeholder="Weight" />
         </div>
         <button type="submit">Submit</button>
       </form>

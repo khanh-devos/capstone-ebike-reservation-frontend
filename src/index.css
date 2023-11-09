@@ -98,3 +98,128 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+.getInput{
+  background-color: #f3f3f4;
+  border: 1px solid #464684;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 40%;
+  height: 80%;
+  transition: all 1.3s ease-in-out;
+}
+
+.getInput input{
+  width: 100%;
+  height: 100%;
+  border: 2px;
+  outline: black;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.getInput textarea{
+  width: 100%;
+  height: 100%;
+  border: 2px;
+  outline: black;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.getInput select{
+  width: 100%;
+  height: 100%;
+  border: 2px;
+  outline: black;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #989a923d;
+}
+
+.getInput button{
+  width: 50%;
+  border: 2px;
+  outline: black;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #97bf0f;
+  border: 1px solid #f3f3f4;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 1.3s ease-in-out;
+}
+
+.getInput button:hover{
+  background-color: #f3f3f4;
+  color: #000;
+  border: 1px solid #464684;
+}
+
+.getInput h1{
+  font-size: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .getInput{
+    width: 90%;
+    height: 93%;
+    margin: 0 auto;
+  }
+
+  .getInput input{
+    width: 100%;
+    height: 100%;
+    border: 2px;
+    outline: black;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  .getInput textarea{
+    width: 100%;
+    height: 100%;
+    border: 2px;
+    outline: black;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .getInput select{
+    width: 100%;
+    height: 100%;
+    border: 2px;
+    outline: black;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 20px 20px 0px;
+    background-color: #989a923d;
+  }
+
+  .getInput h1{
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+}
