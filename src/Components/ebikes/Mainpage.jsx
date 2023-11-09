@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import '../../index.css';
-import NavigationPanel from '../NavigationPanel';
+import NavigationPanel from '../NavigationPanel123';
 import BikeCarousel from './BikeCarousel';
 
 function Mainpage() {

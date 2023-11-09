@@ -1,6 +1,6 @@
 import '../index.css';
 import { NavLink } from 'react-router-dom';
-import NavigationPanel from './NavigationPanel';
+import NavigationPanel from './NavigationPanel123';
 
 const Homepage = () => (
   <div className="bgcontainer">
