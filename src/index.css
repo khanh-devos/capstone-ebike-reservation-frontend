@@ -91,7 +91,7 @@ body {
   text-transform: uppercase;
 }
 
-.mainclass{
+.mainclass {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +99,7 @@ body {
   height: 100vh;
 }
 
-.getInput{
+.getInput {
   background-color: #f3f3f4;
   border: 1px solid #464684;
   color: #000;
@@ -107,11 +107,11 @@ body {
   border-radius: 25px;
   font-size: 16px;
   width: 40%;
-  height: 80%;
+  height: 84%;
   transition: all 1.3s ease-in-out;
 }
 
-.getInput input{
+.getInput input {
   width: 100%;
   height: 100%;
   border: 2px;
@@ -122,7 +122,7 @@ body {
   margin-top: 20px;
 }
 
-.getInput textarea{
+.getInput textarea {
   width: 100%;
   height: 100%;
   border: 2px;
@@ -133,7 +133,7 @@ body {
   margin-top: 20px;
 }
 
-.getInput select{
+.getInput select {
   width: 100%;
   height: 100%;
   border: 2px;
@@ -145,44 +145,40 @@ body {
   background-color: #989a923d;
 }
 
-.getInput button{
+.getInput button {
   width: 50%;
   border: 2px;
   outline: black;
   font-size: 16px;
-  padding: 10px;
   border-radius: 5px;
   margin-top: 20px;
   background-color: #97bf0f;
-  border: 1px solid #f3f3f4;
   color: #fff;
   padding: 10px 25px;
-  border-radius: 25px;
-  font-size: 16px;
   cursor: pointer;
   transition: all 1.3s ease-in-out;
 }
 
-.getInput button:hover{
+.getInput button:hover {
   background-color: #f3f3f4;
   color: #000;
   border: 1px solid #464684;
 }
 
-.getInput h1{
+.getInput h1 {
   font-size: 30px;
   width: 100%;
   margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
-  .getInput{
+  .getInput {
     width: 90%;
     height: 93%;
     margin: 0 auto;
   }
 
-  .getInput input{
+  .getInput input {
     width: 100%;
     height: 100%;
     border: 2px;
@@ -193,7 +189,7 @@ body {
     margin-top: 5px;
   }
 
-  .getInput textarea{
+  .getInput textarea {
     width: 100%;
     height: 100%;
     border: 2px;
@@ -204,7 +200,7 @@ body {
     margin-top: 20px;
   }
 
-  .getInput select{
+  .getInput select {
     width: 100%;
     height: 100%;
     border: 2px;
@@ -212,14 +208,13 @@ body {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 20px 20px 0px;
+    margin: 20px 20px 20px 0;
     background-color: #989a923d;
   }
 
-  .getInput h1{
+  .getInput h1 {
     font-size: 20px;
     width: 100%;
     margin-bottom: 10px;
   }
-  
 }
