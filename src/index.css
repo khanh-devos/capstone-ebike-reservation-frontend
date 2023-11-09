@@ -59,10 +59,16 @@
   position: relative;
 }
 
+.message-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 58, 58, 0.1);
+}
+
 .show-message {
-  position: fixed;
-  left: 20%;
-  top: 30%;
   background: green;
   max-height: 100px;
   max-width: 300px;

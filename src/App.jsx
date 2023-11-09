@@ -15,6 +15,7 @@ import SpecificBike from './Components/ebikes/SpecificBike';
 import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
 import { fetchLocations } from './redux/location/locationSlice';
+import Message from './Message';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function App() {
 
   return (
     <div className="myApp">
-      {showMessage && message && <div className="show-message">{message}</div>}
+      {showMessage && message && <Message message={message} />}
 
       <Router>
         <div className="App">
