@@ -1,37 +1,45 @@
 // Singup.js
-import React from 'react';
+import React, { useEffect } from 'react';
+import { v4 } from 'uuid';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSignup } from '../../redux/auth/authSlice';
 import './reservation.css';
+import { addReservation } from '../../redux/reservation/reservationSlice';
+import NavigationPanel from '../NavigationPanel';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
-  const { ebikes } = useSelector((state) => state.ebikeSlice);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { isLogined } = useSelector((state) => state.authSlice);
+  const { locations } = useSelector((state) => state.locationSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const f = e.currentTarget;
 
-    const arr = [f.name.value, f.email.value, f.password.value,
-      f.passwordConfirmation.value, f.role.value];
+    const arr = [f.startingDate.value, f.endingDate.value, f.city.value];
 
     if (arr.some((item) => item.trim().length === 0)) return;
 
     const data = {
-      name: arr[0],
-      email: arr[1],
-      password: arr[2],
-      password_confirmation: arr[3],
-      role: arr[4],
+      starting_date: arr[0],
+      ending_date: arr[1],
+      location: arr[2],
+      ebike_id: id,
     };
 
-    dispatch(fetchSignup(data));
+    dispatch(addReservation(data));
     // form.reset();
   };
 
+  useEffect(() => {
+    if (!isLogined) navigate('/');
+  }, [dispatch, navigate, isLogined]);
+
   return (
-    <div className="mx-0 px-28">
-      <h1 className="text-black text-5xl">New Reservation</h1>
+    <div className="reservation-page">
+      <h2 className=""><strong>NEW RESERVATION</strong></h2>
 
       <form className="reservation-form" onSubmit={handleSubmit}>
 
@@ -62,16 +70,18 @@ export default function NewReservation() {
           <h5>City : </h5>
           <select name="city">
             {
-            ebikes.map((item) => (
-              <option key={item.id} value={`${item.id}`}>{item.city}</option>
+            locations.map((item) => (
+              <option key={v4()} value={`${item}`}>{item}</option>
             ))
           }
           </select>
         </div>
 
-        <button type="submit">Book</button>
+        <button className="submit-btn" type="submit">SUBMIT</button>
 
       </form>
+
+      <NavigationPanel />
 
     </div>
   );

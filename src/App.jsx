@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
@@ -17,11 +17,12 @@ import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
 import { fetchLocations } from './redux/location/locationSlice';
 import Message from './Message';
+import { resetReservationMessage } from './redux/reservation/reservationSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const { message } = useSelector((state) => state.authSlice);
-  const [showMessage, setShowingMessage] = useState(false);
+  const { message, isLogined } = useSelector((state) => state.authSlice);
+  const { reservationMessage } = useSelector((state) => state.reservationSlice);
 
   useEffect(() => {
     dispatch(fetchEbike());
@@ -29,16 +30,16 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    setShowingMessage(true);
     setTimeout(() => {
-      setShowingMessage(false);
-      dispatch(resetMessage());
+      if (message) dispatch(resetMessage());
+      if (reservationMessage) dispatch(resetReservationMessage());
     }, 2000);
-  }, [message, dispatch]);
+  }, [message, dispatch, reservationMessage]);
 
   return (
     <div className="myApp">
-      {showMessage && message && <Message message={message} />}
+      { message && <Message message={message} /> }
+      { reservationMessage && <Message message={reservationMessage} />}
 
       <Router>
         <div className="App">
@@ -46,9 +47,18 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/" element={<Homepage />} />
-            <Route path="/ebikes" element={<Mainpage />} />
+
+            {
+             !isLogined
+              && (
+              <>
+                <Route path="/" element={<Homepage />} />
+              </>
+              )
+            }
+
             <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
+            <Route path="/ebikes" element={<Mainpage />} />
             <Route path="/ebikes/:id" element={<SpecificBike />} />
           </Routes>
         </div>

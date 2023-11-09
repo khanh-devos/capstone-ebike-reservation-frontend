@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservation/reservationSlice';
-import './reservations.css';
+import './reservation.css';
 import NavigationPanel from '../NavigationPanel';
 
 function MyReservations() {
@@ -22,7 +22,7 @@ function MyReservations() {
             <div className="table">
               <div className="table_row">
                 <div className="table_header_item">Ebike</div>
-                <div className="table_header_item">Price</div>
+                <div className="table_header_item">Location</div>
                 <div className="table_header_item">From</div>
                 <div className="table_header_item">To</div>
               </div>
@@ -30,7 +30,7 @@ function MyReservations() {
             reservations.map((reservation) => (
               <div key={reservation.id} className="table_row">
                 <div className="table_item">{reservation.ebike.name}</div>
-                <div className="table_item">{reservation.ebike.price}</div>
+                <div className="table_item">{reservation.location}</div>
                 <div className="table_item">{reservation.formated_starting_date}</div>
                 <div className="table_item">{reservation.formated_ending_date}</div>
               </div>

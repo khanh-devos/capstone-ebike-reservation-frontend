@@ -3,14 +3,14 @@ import ebikeSlice from './ebike/ebikeSlice';
 import authSlice from './auth/authSlice';
 
 import locationSlice from './location/locationSlice';
-import myReservationSlice from './reservation/myReservationSlice';
+import reservationSlice from './reservation/reservationSlice';
 
 const store = configureStore({
   reducer: {
     locationSlice,
     authSlice,
     ebikeSlice,
-    myReservationSlice,
+    reservationSlice,
   },
 });
 
