@@ -26,6 +26,25 @@ export const fetchEbike = createAsyncThunk(
   },
 );
 
+export const postEbike = createAsyncThunk(
+  'api/fetchEbike',
+  async (thunkAPI) => {
+    try {
+      const { token } = JSON.parse(localStorage.getItem('ebikeData'));
+      const res = await axios.post(EBIKE_URL, {
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue('ebikes fetching failed');
+    }
+  },
+);
+
 const ebikeSlice = createSlice({
   name: 'fetchEbikes',
   initialState,
@@ -47,7 +66,6 @@ const ebikeSlice = createSlice({
       }));
   },
 });
-
 // export const { } = ebikeSlice.actions;
 
 export default ebikeSlice.reducer;

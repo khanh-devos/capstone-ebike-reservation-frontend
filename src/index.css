@@ -90,3 +90,11 @@ body {
   opacity: 0.8;
   text-transform: uppercase;
 }
+
+.mainclass{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
