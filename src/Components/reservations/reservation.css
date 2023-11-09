@@ -1,3 +1,7 @@
+.reservation-page {
+  padding: 10% 10%;
+}
+
 .reservation-form {
   margin-top: 2rem;
   display: flex;
@@ -5,7 +9,6 @@
   width: 30rem;
   gap: 1rem;
   align-items: flex-start;
-  border: 1px solid red;
 }
 
 .reservation-input {

@@ -33,7 +33,24 @@ const reservationSlice = createSlice({
   name: 'fetchReservations',
   initialState,
   reducers: {
-    add: (state) => (state),
+    add: async (state, { payload }) => {
+      try {
+        const { token } = JSON.parse(localStorage.getItem('ebikeData'));
+
+        const res = await axios.post(RESERVATION_URL, payload, {
+          headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        console.log(res);
+      } catch (err) {
+        return { ...state, message: err };
+      }
+
+      return state;
+    },
   },
   extraReducers: (builder) => {
     builder
