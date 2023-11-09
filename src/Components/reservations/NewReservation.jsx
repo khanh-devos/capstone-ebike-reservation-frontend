@@ -1,7 +1,7 @@
 // Singup.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { v4 } from 'uuid';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './reservation.css';
 import { addReservation } from '../../redux/reservation/reservationSlice';
@@ -9,7 +9,9 @@ import NavigationPanel from '../NavigationPanel';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
+  const { isLogined } = useSelector((state) => state.authSlice);
   const { locations } = useSelector((state) => state.locationSlice);
 
   const handleSubmit = (e) => {
@@ -30,6 +32,10 @@ export default function NewReservation() {
     dispatch(addReservation(data));
     // form.reset();
   };
+
+  useEffect(() => {
+    if (!isLogined) navigate('/');
+  }, [dispatch, navigate, isLogined]);
 
   return (
     <div className="reservation-page">

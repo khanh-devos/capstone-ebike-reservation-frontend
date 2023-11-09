@@ -21,7 +21,7 @@ import { resetReservationMessage } from './redux/reservation/reservationSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const { message } = useSelector((state) => state.authSlice);
+  const { message, isLogined } = useSelector((state) => state.authSlice);
   const { reservationMessage } = useSelector((state) => state.reservationSlice);
 
   useEffect(() => {
@@ -47,9 +47,18 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/" element={<Homepage />} />
-            <Route path="/ebikes" element={<Mainpage />} />
+
+            {
+             !isLogined
+              && (
+              <>
+                <Route path="/" element={<Homepage />} />
+              </>
+              )
+            }
+
             <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
+            <Route path="/ebikes" element={<Mainpage />} />
             <Route path="/ebikes/:id" element={<SpecificBike />} />
           </Routes>
         </div>
