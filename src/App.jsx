@@ -9,6 +9,7 @@ import Loginpage from './Components/auth/Loginpage';
 import Homepage from './Components/Homepage';
 import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
+import MyReservations from './Components/reservations/MyReservations';
 import Mainpage from './Components/ebikes/Mainpage';
 // import { fetchReservation } from './redux/reservation/reservationSlice';
 import SpecificBike from './Components/ebikes/SpecificBike';
@@ -43,6 +44,7 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
+            <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Homepage />} />
@@ -54,6 +56,7 @@ function App() {
         </div>
       </Router>
     </div>
+
   );
 }
 

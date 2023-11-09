@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'; // For handling async actions
 import ebikeReducer from './actions/ebikeReducer';
 import ebikeSlice from './ebike/ebikeSlice';
 import authSlice from './auth/authSlice';
+
 import locationSlice from './location/locationSlice';
 import myReservationSlice from './reservation/myReservationSlice';
 
