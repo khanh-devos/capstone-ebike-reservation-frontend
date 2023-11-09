@@ -1,7 +1,6 @@
 // YourComponent.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import addEbike from '../redux/actions/ebikeActions';
 import { postEbike } from '../redux/ebike/ebikeSlice';
 
 function YourComponent() {
@@ -57,7 +56,7 @@ function YourComponent() {
           </select>
         </div>
         <div className="">
-          <input type="file" required name="image" value={ebikeData.image} onChange={handleChange} placeholder="Image URL" />
+          <input type="text" required name="image" value={ebikeData.image} onChange={handleChange} placeholder="Image URL" />
         </div>
         <div className="">
           <textarea name="description" required value={ebikeData.description} onChange={handleChange} placeholder="Description" />
