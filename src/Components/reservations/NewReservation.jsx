@@ -4,7 +4,8 @@ import { v4 } from 'uuid';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './reservation.css';
-import { add } from '../../redux/reservation/reservationSlice';
+import { addReservation } from '../../redux/reservation/reservationSlice';
+import NavigationPanel from '../NavigationPanel';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export default function NewReservation() {
       ebike_id: id,
     };
 
-    dispatch(add(data));
+    dispatch(addReservation(data));
     // form.reset();
   };
 
@@ -73,6 +74,8 @@ export default function NewReservation() {
         <button className="submit-btn" type="submit">SUBMIT</button>
 
       </form>
+
+      <NavigationPanel />
 
     </div>
   );
