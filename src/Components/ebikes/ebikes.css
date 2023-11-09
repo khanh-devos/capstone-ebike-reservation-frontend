@@ -256,3 +256,13 @@
   height: 350px;
   padding-right: 60px;
 }
+
+.rainbow-contaienr {
+  display: flex;
+  width: 180px;
+  justify-content: right;
+}
+
+.rainbow-img {
+  height: 95px;
+}
