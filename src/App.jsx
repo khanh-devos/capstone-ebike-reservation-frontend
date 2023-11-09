@@ -14,15 +14,17 @@ import Mainpage from './Components/ebikes/Mainpage';
 import SpecificBike from './Components/ebikes/SpecificBike';
 import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
+import { fetchLocations } from './redux/location/locationSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const { isLogined, message } = useSelector((state) => state.authSlice);
+  const { message } = useSelector((state) => state.authSlice);
   const [showMessage, setShowingMessage] = useState(false);
 
   useEffect(() => {
     dispatch(fetchEbike());
-  }, [dispatch, isLogined]);
+    dispatch(fetchLocations());
+  }, [dispatch]);
 
   useEffect(() => {
     setShowingMessage(true);
