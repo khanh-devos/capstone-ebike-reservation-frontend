@@ -1,11 +1,14 @@
 // Singup.js
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchSignup } from '../../redux/auth/authSlice';
 import './auth.css';
 
 function Signup() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLogined } = useSelector((state) => state.authSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,12 +28,16 @@ function Signup() {
     };
 
     dispatch(fetchSignup(data));
-    // form.reset();
+    f.reset();
   };
 
+  useEffect(() => {
+    if (isLogined) navigate('/ebikes');
+  }, [isLogined, navigate]);
+
   return (
-    <div className="mx-0 px-28">
-      <h1 className="text-black text-5xl">Signup Welcome here</h1>
+    <div className="signup-page">
+      <h2><strong>REGISTER</strong></h2>
 
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
@@ -73,7 +80,7 @@ function Signup() {
           <option value="admin">admin</option>
         </select>
 
-        <button type="submit">Sign up</button>
+        <button className="submit-btn" type="submit">Sign up</button>
 
       </form>
 

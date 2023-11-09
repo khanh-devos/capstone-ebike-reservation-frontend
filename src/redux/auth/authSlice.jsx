@@ -26,7 +26,7 @@ export const fetchLogin = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('login failed');
+      return thunkAPI.rejectWithValue('Login failed');
     }
   },
 );
@@ -43,7 +43,7 @@ export const fetchSignup = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('sign up failed');
+      return thunkAPI.rejectWithValue('Sign up failed');
     }
   },
 );
@@ -62,6 +62,7 @@ const authSlice = createSlice({
         token: '',
       };
     },
+    resetMessage: (state) => ({ ...state, message: '' }),
   },
   extraReducers: (builder) => {
     builder
@@ -118,6 +119,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, resetMessage } = authSlice.actions;
 
 export default authSlice.reducer;

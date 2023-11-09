@@ -13,12 +13,9 @@ export const fetchEbike = createAsyncThunk(
   'api/fetchEbike',
   async (thunkAPI) => {
     try {
-      const { token } = JSON.parse(localStorage.getItem('ebikeData'));
-
       const res = await axios.get(EBIKE_URL, {
         headers: {
           'content-type': 'application/json',
-          Authorization: `Bearer ${token}`,
         },
       });
 
