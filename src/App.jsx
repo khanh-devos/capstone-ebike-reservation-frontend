@@ -36,7 +36,6 @@ function App() {
     }, 2000);
   }, [message, dispatch]);
 
-
   return (
     <div className="myApp">
       {showMessage && message && <Message message={message} />}
