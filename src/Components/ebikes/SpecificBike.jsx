@@ -1,6 +1,6 @@
 // import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 // import { fetchReservation } from '../../redux/reservation/reservationSlice';
 
 // const mockBikes = [
@@ -48,6 +48,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 //     image: 'https://media.bcompras.com.mx/yYuGNeaCO1J1aHHsQhbhzwbJ.webp',
 //   },
 // ];
+import rainbow from './rainbow.png';
 
 export default function SpecificBike() {
   const { ebikes: mockBikes } = useSelector((state) => state.ebikeSlice);
@@ -95,6 +96,9 @@ export default function SpecificBike() {
             <p className="representative-text">Representative</p>
           </div>
           <div className="discover-contaeiner">
+            <div className="rainbow-contaienr">
+              <img src={rainbow} className="rainbow-img" alt="rainbow" />
+            </div>
             <>
               <p className="more-models">DISCOVER MORE MODELS</p>
               <p className="arrow-more-models">
@@ -108,13 +112,12 @@ export default function SpecificBike() {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="back-button"
-      >
-        {' '}
-        {'<'}
-        {' '}
+      <button type="button" className="back-button">
+        <Link to="/ebikes">
+          {' '}
+          {'<'}
+          {' '}
+        </Link>
       </button>
     </div>
   );
