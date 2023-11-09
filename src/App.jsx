@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
@@ -17,27 +17,36 @@ import NewReservation from './Components/reservations/NewReservation';
 
 function App() {
   const dispatch = useDispatch();
-  const { isLogined } = useSelector((state) => state.authSlice);
+  const { isLogined, message } = useSelector((state) => state.authSlice);
+  const [showMessage, setShowingMessage] = useState(false);
 
   useEffect(() => {
     dispatch(fetchEbike());
   }, [dispatch, isLogined]);
 
-  return (
-    <Router>
+  useEffect(() => {
+    setShowingMessage(true);
+    setTimeout(() => setShowingMessage(false), 2000);
+  }, [message]);
 
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/login" element={<Loginpage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/ebikes" element={<Mainpage />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
-          <Route path="/ebikes/:id" element={<SpecificBike />} />
-        </Routes>
-      </div>
-    </Router>
+  return (
+    <div className="myApp">
+      {showMessage && message && <div className="show-message">{message}</div>}
+
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/login" element={<Loginpage />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/ebikes" element={<Mainpage />} />
+            <Route path="/reservations" element={<Reservations />} />
+            <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
+            <Route path="/ebikes/:id" element={<SpecificBike />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 }
 
