@@ -1,3 +1,4 @@
+
 .container {
   display: flex;
   flex-direction: column;
@@ -34,7 +35,7 @@
 
 .table_row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .table_item {
@@ -60,7 +61,8 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  max-width: 20rem;
+
   gap: 1rem;
   align-items: flex-start;
 }

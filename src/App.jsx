@@ -17,7 +17,7 @@ import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
 import { fetchLocations } from './redux/location/locationSlice';
 import Message from './Message';
-import { resetReservationMessage } from './redux/reservation/reservationSlice';
+import { fetchReservations, resetReservationMessage } from './redux/reservation/reservationSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +27,8 @@ function App() {
   useEffect(() => {
     dispatch(fetchEbike());
     dispatch(fetchLocations());
-  }, [dispatch]);
+    if (isLogined) dispatch(fetchReservations());
+  }, [dispatch, isLogined]);
 
   useEffect(() => {
     setTimeout(() => {

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const RESERVATION_URL = 'http://localhost:3100/api/v1/reservations';
 const initialState = {
-  reservations: {},
+  reservations: [],
   reservationLoading: false,
   reservationError: false,
   reservationSuccess: false,
@@ -43,7 +43,7 @@ export const addReservation = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Failed to create a reservation');
+      return thunkAPI.rejectWithValue('Failed : the date might be not available');
     }
   },
 );
@@ -75,6 +75,7 @@ const reservationSlice = createSlice({
       .addCase(addReservation.pending, (state) => ({
         ...state,
         reservationLoading: true,
+        reservationSuccess: false,
       }))
       .addCase(addReservation.fulfilled, (state) => ({
         ...state,
@@ -86,6 +87,7 @@ const reservationSlice = createSlice({
         ...state,
         reservationLoading: false,
         reservationError: true,
+        reservationSuccess: false,
         reservationMessage: payload,
       }));
   },

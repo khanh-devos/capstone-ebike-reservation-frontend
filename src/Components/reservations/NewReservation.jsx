@@ -1,11 +1,11 @@
-// Singup.js
 import React, { useEffect } from 'react';
 import { v4 } from 'uuid';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './reservation.css';
-import { addReservation } from '../../redux/reservation/reservationSlice';
+import { addReservation, fetchReservations } from '../../redux/reservation/reservationSlice';
 import NavigationPanel from '../NavigationPanel';
+import MyCalendar from './MyCalendar';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
@@ -13,19 +13,19 @@ export default function NewReservation() {
   const { id } = useParams();
   const { isLogined } = useSelector((state) => state.authSlice);
   const { locations } = useSelector((state) => state.locationSlice);
+  const { reservationSuccess } = useSelector((state) => state.reservationSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const f = e.currentTarget;
 
-    const arr = [f.startingDate.value, f.endingDate.value, f.city.value];
+    const arr = [f.bookingDate.value, f.city.value];
 
     if (arr.some((item) => item.trim().length === 0)) return;
 
     const data = {
-      starting_date: arr[0],
-      ending_date: arr[1],
-      location: arr[2],
+      book_date: arr[0],
+      location: arr[1],
       ebike_id: id,
     };
 
@@ -35,33 +35,25 @@ export default function NewReservation() {
 
   useEffect(() => {
     if (!isLogined) navigate('/');
-  }, [dispatch, navigate, isLogined]);
+    if (reservationSuccess) dispatch(fetchReservations());
+  }, [dispatch, navigate, isLogined, reservationSuccess]);
 
   return (
     <div className="reservation-page">
-      <h2 className=""><strong>NEW RESERVATION</strong></h2>
+      <h2><strong>{`NEW RESERVATION (ebikeID : ${id})`}</strong></h2>
+
+      <MyCalendar />
 
       <form className="reservation-form" onSubmit={handleSubmit}>
 
         <div>
-          <h5>Starting Date : </h5>
+          <h5>Booking Date : </h5>
           <input
             className="reservation-input"
-            placeholder="Starting date"
+            placeholder="Booking date"
             type="date"
-            name="startingDate"
+            name="bookingDate"
             autoComplete
-            required
-          />
-        </div>
-
-        <div>
-          <h5>Ending Date : </h5>
-          <input
-            className="reservation-input"
-            placeholder="Ending date"
-            type="date"
-            name="endingDate"
             required
           />
         </div>

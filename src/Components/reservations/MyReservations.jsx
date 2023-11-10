@@ -23,18 +23,18 @@ function MyReservations() {
               <div className="table_row">
                 <div className="table_header_item">Ebike</div>
                 <div className="table_header_item">Location</div>
-                <div className="table_header_item">From</div>
-                <div className="table_header_item">To</div>
+                <div className="table_header_item">Date</div>
               </div>
               {
-            reservations.map((reservation) => (
-              <div key={reservation.id} className="table_row">
-                <div className="table_item">{reservation.ebike.name}</div>
-                <div className="table_item">{reservation.location}</div>
-                <div className="table_item">{reservation.formated_starting_date}</div>
-                <div className="table_item">{reservation.formated_ending_date}</div>
-              </div>
-            ))
+            reservations
+              .filter((item) => item.user_id === user.id)
+              .map((reservation) => (
+                <div key={reservation.id} className="table_row">
+                  <div className="table_item">{reservation.ebike.name}</div>
+                  <div className="table_item">{reservation.location}</div>
+                  <div className="table_item">{reservation.formated_book_date}</div>
+                </div>
+              ))
             }
             </div>
           )

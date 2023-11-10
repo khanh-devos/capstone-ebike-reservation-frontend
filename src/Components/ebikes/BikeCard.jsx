@@ -14,7 +14,9 @@ function BikeCard({ bike }) {
     <div className="card" onClick={clickAbike}>
       <div className="bike-card">
         <img className="img-bike" src={bike.image} alt={bike.name} />
-        <h2 className="name-bike">{bike.name}</h2>
+        <h2 className="name-bike">
+          {`${bike.name} : ${bike.id}`}
+        </h2>
         <p className="bike-description">{bike.description}</p>
       </div>
       <ul className="container-icons-card">
