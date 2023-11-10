@@ -71,20 +71,20 @@ export default function SpecificBike() {
         <div className="info-bike">
           <div className="titles-specific-container">
             <h2 className="name-specific-bike">{bikeName}</h2>
-            <p className="deposit-text">-£350 deposit any Vespa Purchaset</p>
+            <p className="deposit-text">-10% deposit any Ebike Purchaset</p>
           </div>
           <div className="payment-c">
             <div className="specification-1">
               <p className="left-text">Finance free</p>
-              <p className="right-text">£129</p>
+              <p className="right-text">{`£${bike.price}`}</p>
             </div>
             <div className="specification-2">
               <p className="left-text">Option to purchase fee</p>
-              <p className="right-text">£249</p>
+              <p className="right-text">+10%</p>
             </div>
             <div className="specification-3">
               <p className="left-text">Total ammount payable</p>
-              <p className="right-text">£9,879</p>
+              <p className="right-text">{`£${bike.price}`}</p>
             </div>
             <div className="specification-4">
               <p className="left-text">Duration</p>

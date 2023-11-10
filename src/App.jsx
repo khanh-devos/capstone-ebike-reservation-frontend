@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchEbike());
-    dispatch(fetchLocations());
+    if (isLogined) dispatch(fetchLocations());
     if (isLogined) dispatch(fetchReservations());
   }, [dispatch, isLogined]);
 
@@ -49,14 +49,7 @@ function App() {
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<Signup />} />
 
-            {
-             !isLogined
-              && (
-              <>
-                <Route path="/" element={<Homepage />} />
-              </>
-              )
-            }
+            <Route path="/" element={<Homepage />} />
 
             <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
             <Route path="/ebikes" element={<Mainpage />} />
