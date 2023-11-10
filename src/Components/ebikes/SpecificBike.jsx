@@ -1,60 +1,30 @@
-// import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams, Link } from 'react-router-dom';
-// import { fetchReservation } from '../../redux/reservation/reservationSlice';
-
-// const mockBikes = [
-//   {
-//     id: 1,
-//     name: 'EcoRider 500',
-//     description:
-//       'An elegant and efficient electric bicycle for your daily commute.',
-//     image: 'https://media.bcompras.com.mx/iFSz4S0PZCusaaKK1RvtSbd2.webp',
-//   },
-//   {
-//     id: 2,
-//     name: 'VoltXpress ZR2',
-//     description:
-//       'The perfect companion to explore the city with speed and comfort.',
-//     image:
-//       'https://http2.mlstatic.com/D_NQ_NP_2X_904305-MLA48736887155_012022-F.webp',
-//   },
-//   {
-//     id: 3,
-//     name: 'UrbanGlide Pro',
-//     description:
-//       'A versatile and modern electric bicycle that adapts to your lifestyle.',
-//     image: 'https://media.bcompras.com.mx/tVmMvJPOxrykcPSk2roMyqOx.webp',
-//   },
-//   {
-//     id: 4,
-//     name: 'EcoMotion X3',
-//     description:
-//       'Experimenta la libertad de moverte de manera sostenible con esta e-bike.',
-//     image: 'https://media.bcompras.com.mx/RUFTQuCiAjO0SVYA4SF4W3Po.webp',
-//   },
-//   {
-//     id: 5,
-//     name: 'SpeedRider S1',
-//     description:
-//       'Experience the freedom of moving sustainably with this e-bike.',
-//     image: 'https://media.bcompras.com.mx/F0OGrsgu8eZV3kw2MLbpJnSJ.webp',
-//   },
-//   {
-//     id: 6,
-//     name: 'CityCommuter E7',
-//     description:
-//       'Ride around town in style and efficiency on this modern e-bike.',
-//     image: 'https://media.bcompras.com.mx/yYuGNeaCO1J1aHHsQhbhzwbJ.webp',
-//   },
-// ];
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  useNavigate, useParams, Link,
+} from 'react-router-dom';
 import rainbow from './rainbow.png';
+import { deleteEbike, resetMessage } from '../../redux/ebike/ebikeSlice';
 
 export default function SpecificBike() {
-  const { ebikes: mockBikes } = useSelector((state) => state.ebikeSlice);
-
+  const [errorMessage, setErrorMessage] = useState(false);
+  const {
+    ebikes, ebike, isLoading, message,
+  } = useSelector((state) => state.ebikeSlice);
+  const { user } = useSelector((state) => state.authSlice);
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  let bike = ebike;
+  useEffect(() => {
+    if (!user) navigate('/login');
+  }, [user, navigate]);
+
+  console.log('ebikes', ebikes, bike, user);
+  if (!ebike) {
+    bike = ebikes.find((b) => b.id === parseInt(id, 10));
+  }
+
 
   const bike = mockBikes.find((b) => b.id === parseInt(id, 10));
   const bikeModel = bike ? bike.model : 'Bike not found';
@@ -63,6 +33,20 @@ export default function SpecificBike() {
 
   const handleReserve = () => navigate(`/ebikes/${id}/reservations/new`);
 
+  const handleDeleteEbike = () => {
+    dispatch(deleteEbike(bike.id));
+  };
+
+  useEffect(() => {
+    if (message === 'ebike deleted successfully') {
+      navigate('/ebikes');
+      dispatch(resetMessage());
+    } else {
+      setErrorMessage(true);
+    }
+  }, [message, navigate]);
+
+  if (isLoading) return <h1>Loading...</h1>;
   return (
     <div className="main-specific">
       <div className="container-specific-bike">
@@ -109,10 +93,17 @@ export default function SpecificBike() {
               </p>
             </>
           </div>
-          <button className="btn-reserve" onClick={handleReserve} type="button">Reserve &gt;</button>
+          <div className="flex_horizontal">
+            <button className="btn btn-reserve" onClick={handleReserve} type="button">Reserve &gt;</button>
+            {user && bike && user.id === bike.seller_id && (
+              <button className="btn btn-delete" type="button" onClick={handleDeleteEbike}>
+                Delete
+              </button>
+            )}
+          </div>
+          {errorMessage ? <div className="flex_horizontal error_message">{message}</div> : ''}
         </div>
       </div>
-
       <button type="button" className="back-button">
         <Link to="/ebikes">
           {' '}

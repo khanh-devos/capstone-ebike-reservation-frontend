@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   BiLogoTwitter, BiLogoFacebook, BiLogoInstagram,
 } from 'react-icons/bi';
+import { setEbike } from '../../redux/ebike/ebikeSlice';
 
 function BikeCard({ bike }) {
   const navigate = useNavigate();
-
-  const clickAbike = () => navigate(`/ebikes/${bike.id}`);
+  const dispatch = useDispatch();
+  const clickAbike = () => {
+    dispatch(setEbike(bike));
+    console.log('bike from the card', bike);
+    navigate(`/ebikes/${bike.id}`);
+  };
 
   return (
     <div className="card" onClick={clickAbike}>
