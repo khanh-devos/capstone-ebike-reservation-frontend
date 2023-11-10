@@ -92,7 +92,6 @@ body {
   text-transform: uppercase;
 }
 
-
 .mainclass {
   display: flex;
   flex-direction: column;
@@ -191,6 +190,7 @@ body {
     margin-top: 5px;
   }
 
+  /* here some style and responsive */
   .getInput textarea {
     width: 100%;
     height: 100%;
