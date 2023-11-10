@@ -5,11 +5,9 @@ import axios from 'axios';
 const EBIKE_URL = 'http://localhost:3100/api/v1/ebikes';
 
 const initialState = {
-  ebikes: {},
-  ebikeLoading: false,
-  ebikeError: false,
-  ebikeSuccess: false,
-  ebikeMessage: '',
+  addEbikeLoading: false,
+  addEbikeSuccess: false,
+  addEbikeMessage: '',
 };
 
 export const postEbike = createAsyncThunk(
@@ -25,34 +23,37 @@ export const postEbike = createAsyncThunk(
       });
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('add new ebike failed');
+      return thunkAPI.rejectWithValue('Failed to create an ebike');
     }
   },
 );
 
-const ebikeSliceadding = createSlice({
+const addingEbikeSlice = createSlice({
   name: 'ebikeSliceadding',
   initialState,
-  reducers: {},
+  reducers: {
+    resetAddEbikeMessage: (state) => ({ ...state, addEbikeMessage: '' }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(postEbike.pending, (state) => ({
         ...state,
-        ebikeLoading: true,
+        addEbikeLoading: true,
       }))
-      .addCase(postEbike.fulfilled, (state, { payload }) => ({
+      .addCase(postEbike.fulfilled, (state) => ({
         ...state,
-        ebikeLoading: false,
-        ebikes: payload,
-        ebikeSuccess: true,
+        addEbikeLoading: false,
+        addEbikeMessage: 'Successfully Created',
+        addEbikeSuccess: true,
       }))
       .addCase(postEbike.rejected, (state, { payload }) => ({
         ...state,
-        ebikeLoading: false,
-        ebikeError: true,
-        ebikeMessage: payload,
+        addEbikeLoading: false,
+        addEbikeMessage: payload,
       }));
   },
 });
 
-export default ebikeSliceadding.reducer;
+export const { resetAddEbikeMessage } = addingEbikeSlice.actions;
+
+export default addingEbikeSlice.reducer;

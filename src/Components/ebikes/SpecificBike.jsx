@@ -57,8 +57,9 @@ export default function SpecificBike() {
   const navigate = useNavigate();
 
   const bike = mockBikes.find((b) => b.id === parseInt(id, 10));
-  const bikeName = bike ? bike.name : 'Bike not found';
+  const bikeModel = bike ? bike.model : 'Bike not found';
   const bikeImg = bike ? bike.image : 'Bike image not found';
+  const bikePrice = bike ? bike.price : 'Bike price not found';
 
   const handleReserve = () => navigate(`/ebikes/${id}/reservations/new`);
 
@@ -70,13 +71,13 @@ export default function SpecificBike() {
         </div>
         <div className="info-bike">
           <div className="titles-specific-container">
-            <h2 className="name-specific-bike">{bikeName}</h2>
+            <h2 className="name-specific-bike">{bikeModel}</h2>
             <p className="deposit-text">-10% deposit any Ebike Purchaset</p>
           </div>
           <div className="payment-c">
             <div className="specification-1">
               <p className="left-text">Finance free</p>
-              <p className="right-text">{`£${bike.price}`}</p>
+              <p className="right-text">{`£${bikePrice}`}</p>
             </div>
             <div className="specification-2">
               <p className="left-text">Option to purchase fee</p>
@@ -84,7 +85,7 @@ export default function SpecificBike() {
             </div>
             <div className="specification-3">
               <p className="left-text">Total ammount payable</p>
-              <p className="right-text">{`£${bike.price}`}</p>
+              <p className="right-text">{`£${bikePrice}`}</p>
             </div>
             <div className="specification-4">
               <p className="left-text">Duration</p>

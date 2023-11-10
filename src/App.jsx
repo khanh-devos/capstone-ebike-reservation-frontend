@@ -19,31 +19,36 @@ import { fetchLocations } from './redux/location/locationSlice';
 import Message from './Message';
 
 import { fetchReservations, resetReservationMessage } from './redux/reservation/reservationSlice';
-import EbikeForm from './Components/EbikeForm';
-
+import EbikeForm from './Components/ebikes/EbikeForm';
+import { fetchEbikeModels } from './redux/ebike_models/ebikeModelSlice';
+import { resetAddEbikeMessage } from './redux/ebike/addingNewbike';
 
 function App() {
   const dispatch = useDispatch();
   const { message, isLogined } = useSelector((state) => state.authSlice);
   const { reservationMessage } = useSelector((state) => state.reservationSlice);
+  const { addEbikeMessage } = useSelector((state) => state.addingEbikeSlice);
 
   useEffect(() => {
     dispatch(fetchEbike());
     if (isLogined) dispatch(fetchLocations());
     if (isLogined) dispatch(fetchReservations());
+    if (isLogined) dispatch(fetchEbikeModels());
   }, [dispatch, isLogined]);
 
   useEffect(() => {
     setTimeout(() => {
       if (message) dispatch(resetMessage());
       if (reservationMessage) dispatch(resetReservationMessage());
+      if (addEbikeMessage) dispatch(resetAddEbikeMessage());
     }, 2000);
-  }, [message, dispatch, reservationMessage]);
+  }, [message, dispatch, reservationMessage, addEbikeMessage]);
 
   return (
     <div className="myApp">
       { message && <Message message={message} /> }
       { reservationMessage && <Message message={reservationMessage} />}
+      { addEbikeMessage && <Message message={addEbikeMessage} />}
 
       <Router>
         <div className="App">
