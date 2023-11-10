@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { postEbike } from '../redux/ebike/addingNewbike';
 
-function YourComponent() {
+function EbikeForm() {
   const dispatch = useDispatch();
 
   const [ebikeData, setEbikeData] = useState({
@@ -87,4 +87,4 @@ function YourComponent() {
   );
 }
 
-export default YourComponent;
+export default EbikeForm;
