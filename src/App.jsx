@@ -17,7 +17,10 @@ import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
 import { fetchLocations } from './redux/location/locationSlice';
 import Message from './Message';
+
 import { fetchReservations, resetReservationMessage } from './redux/reservation/reservationSlice';
+import EbikeForm from './Components/EbikeForm';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +51,7 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/addEbike" element={<EbikeForm />} />
 
             <Route path="/" element={<Homepage />} />
 
