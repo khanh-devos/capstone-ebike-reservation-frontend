@@ -12,7 +12,7 @@ function MyReservations() {
     dispatch(fetchReservations());
   }, [dispatch]);
   return (
-    <div className="flex justify-center  items-center container">
+    <div className="flex justify-center items-center container">
       <h1 className="title">
         {`${user.name}s Reservations`}
       </h1>
@@ -23,7 +23,9 @@ function MyReservations() {
               <div className="table_row">
                 <div className="table_header_item">Ebike</div>
                 <div className="table_header_item">Location</div>
-                <div className="table_header_item">Date</div>
+                <div className="table_header_item">From</div>
+                <div className="table_header_item">To</div>
+
               </div>
               {
             reservations
@@ -32,7 +34,9 @@ function MyReservations() {
                 <div key={reservation.id} className="table_row">
                   <div className="table_item">{reservation.ebike.name}</div>
                   <div className="table_item">{reservation.location}</div>
-                  <div className="table_item">{reservation.formated_book_date}</div>
+                  <div className="table_item">{reservation.formated_starting_date}</div>
+                  <div className="table_item">{reservation.formated_ending_date}</div>
+
                 </div>
               ))
             }

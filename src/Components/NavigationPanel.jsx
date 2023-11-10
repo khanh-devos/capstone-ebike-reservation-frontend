@@ -29,8 +29,8 @@ function NavigationPanel() {
 
   return (
     <>
-      <button type="button" id="hamburg" className="md:fixed top-5 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
-        <HiMenuAlt4 className="text-[34px]" />
+      <button type="button" id="hamburg" className="md:fixed top-15 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
+        <HiMenuAlt4 className="text-[40px]" />
       </button>
       {menu && (
       <nav ref={navbarRef} className="flex flex-col border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">

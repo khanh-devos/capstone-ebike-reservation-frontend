@@ -35,7 +35,7 @@
 
 .table_row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .table_item {
@@ -55,6 +55,7 @@
 
 .reservation-page {
   padding: 10% 10%;
+  max-width: 99%;
 }
 
 .reservation-form {
@@ -68,4 +69,10 @@
 
 .reservation-input {
   border: 1px solid black;
+}
+
+.date-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

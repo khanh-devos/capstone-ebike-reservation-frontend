@@ -14,18 +14,20 @@ export default function NewReservation() {
   const { isLogined } = useSelector((state) => state.authSlice);
   const { locations } = useSelector((state) => state.locationSlice);
   const { reservationSuccess } = useSelector((state) => state.reservationSlice);
+  const { ebikes } = useSelector((state) => state.ebikeSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const f = e.currentTarget;
 
-    const arr = [f.bookingDate.value, f.city.value];
+    const arr = [f.startingDate.value, f.endingDate.value, f.city.value];
 
     if (arr.some((item) => item.trim().length === 0)) return;
 
     const data = {
-      book_date: arr[0],
-      location: arr[1],
+      starting_date: arr[0],
+      ending_date: arr[1],
+      location: arr[2],
       ebike_id: id,
     };
 
@@ -40,25 +42,62 @@ export default function NewReservation() {
 
   return (
     <div className="reservation-page">
-      <h2><strong>{`NEW RESERVATION (ebikeID : ${id})`}</strong></h2>
+      <h2><strong>NEW RESERVATION</strong></h2>
 
       <MyCalendar />
 
       <form className="reservation-form" onSubmit={handleSubmit}>
 
-        <div>
-          <h5>Booking Date : </h5>
+        <div className="date-input">
+          <h5>Ebike : </h5>
+          <select name="ebike">
+            {
+            ebikes.map((item) => {
+              if (item.id === Number(id)) {
+                return (
+                  <option key={v4()} value={item.id} selected>
+                    {item.name.toUpperCase()}
+                    -
+                    {item.id}
+                  </option>
+                );
+              }
+
+              return (
+                <option key={v4()} value={item.id}>
+                  {item.name.toUpperCase()}
+                  -
+                  {item.id}
+                </option>
+              );
+            })
+          }
+          </select>
+        </div>
+
+        <div className="date-input">
+          <h5>From : </h5>
           <input
             className="reservation-input"
-            placeholder="Booking date"
+            placeholder="Starting date"
             type="date"
-            name="bookingDate"
-            autoComplete
+            name="startingDate"
             required
           />
         </div>
 
-        <div>
+        <div className="date-input">
+          <h5>To : </h5>
+          <input
+            className="reservation-input"
+            placeholder="Ending date"
+            type="date"
+            name="endingDate"
+            required
+          />
+        </div>
+
+        <div className="date-input">
           <h5>City : </h5>
           <select name="city">
             {

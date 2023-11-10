@@ -10,8 +10,8 @@ export default function MyCalendar() {
   const bookings = reservations
     .filter((item) => item.ebike.id === Number(id))
     .map((item) => ({
-      from: item.formated_book_date,
-      to: item.formated_book_date,
+      from: item.formated_starting_date,
+      to: item.formated_ending_date,
     }));
 
   return (

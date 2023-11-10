@@ -1,6 +1,7 @@
 /* general */
 :root {
   --color: #626262;
+  --btnColor: #80d7ff;
 }
 
 .calendar {
@@ -45,12 +46,13 @@
   font-style: normal;
   text-transform: none;
   text-align: center;
-  color: #fff;
+  color: #000;
   border: none;
-  background-color: var(--color);
-  padding: 13px 20px;
+  background-color: var(--btnColor);
+  padding: 7px 15px;
   margin: 0;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 /* year  */
