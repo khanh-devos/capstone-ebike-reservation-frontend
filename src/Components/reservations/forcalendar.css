@@ -1,6 +1,6 @@
 /* general */
 :root {
-  --color: #626262;
+  --color: #656565;
   --btnColor: #80d7ff;
 }
 
@@ -11,6 +11,7 @@
   border: 1px solid rgb(163, 163, 163);
   border-radius: 5px;
   box-shadow: 1px 1px 1px rgb(147, 147, 147);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .calendar .wrap {
@@ -115,7 +116,7 @@
 
 .booked {
   background-color: var(--color);
-  color: #fff;
+  color: var(--color);
 }
 
 .isLateCheckout {

@@ -1,14 +1,13 @@
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Calendar from 'reactjs-availability-calendar';
 import './forcalendar.css';
 
-export default function MyCalendar() {
-  const { id } = useParams();
+export default function MyCalendar({ bikeId }) {
   const { reservations } = useSelector((state) => state.reservationSlice);
 
   const bookings = reservations
-    .filter((item) => item.ebike.id === Number(id))
+    .filter((item) => item.ebike.id === Number(bikeId))
     .map((item) => ({
       from: item.formated_starting_date,
       to: item.formated_ending_date,
@@ -18,3 +17,7 @@ export default function MyCalendar() {
     <Calendar bookings={bookings} showNumberOfMonths={1} showControls />
   );
 }
+
+MyCalendar.propTypes = {
+  bikeId: PropTypes.number.isRequired,
+};

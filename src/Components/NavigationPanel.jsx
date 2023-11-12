@@ -12,7 +12,8 @@ import useClickOutside from '../hooks/useClickOutside';
 import { logout } from '../redux/auth/authSlice';
 
 function NavigationPanel() {
-  const { isLogined } = useSelector((state) => state.authSlice);
+  const { isLogined, user } = useSelector((state) => state.authSlice);
+  const isAdmin = user.role === 'admin';
   const dispatch = useDispatch();
   const [menu, setMenu] = useState(false);
   const navbarRef = useRef(null);
@@ -42,13 +43,17 @@ function NavigationPanel() {
           <ul className="mt-10">
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#3f4235] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
 
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
+
+            {
+              isLogined && isAdmin && <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>
+            }
 
             {
             isLogined && (
             <>
               <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/myreservations">MY RESERVATIONS</NavLink></li>
+              <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/ebikes/:id/reservations/new">BOOK A TEST DRIVE</NavLink></li>
               <li className="">
                 <NavLink
                   onClick={() => { removeNavPanel(); handleLogout(); }}
@@ -60,6 +65,11 @@ function NavigationPanel() {
               </li>
             </>
             )
+            }
+
+            {
+              !isLogined && <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">HOME</NavLink></li>
+
             }
 
           </ul>

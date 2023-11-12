@@ -20,16 +20,14 @@ export default function SpecificBike() {
     if (!user) navigate('/login');
   }, [user, navigate]);
 
-  console.log('ebikes', ebikes, bike, user);
   if (!ebike) {
     bike = ebikes.find((b) => b.id === parseInt(id, 10));
   }
 
-
-  const bike = mockBikes.find((b) => b.id === parseInt(id, 10));
-  const bikeModel = bike ? bike.model : 'Bike not found';
-  const bikeImg = bike ? bike.image : 'Bike image not found';
-  const bikePrice = bike ? bike.price : 'Bike price not found';
+  const selectedBike = ebikes.find((b) => b.id === parseInt(id, 10));
+  const bikeModel = selectedBike ? selectedBike.model : 'Bike not found';
+  const bikeImg = selectedBike ? selectedBike.image : 'Bike image not found';
+  const bikePrice = selectedBike ? selectedBike.price : 'Bike price not found';
 
   const handleReserve = () => navigate(`/ebikes/${id}/reservations/new`);
 
@@ -44,7 +42,7 @@ export default function SpecificBike() {
     } else {
       setErrorMessage(true);
     }
-  }, [message, navigate]);
+  }, [message, navigate, dispatch]);
 
   if (isLoading) return <h1>Loading...</h1>;
   return (

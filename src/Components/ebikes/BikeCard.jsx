@@ -12,7 +12,7 @@ function BikeCard({ bike }) {
   const dispatch = useDispatch();
   const clickAbike = () => {
     dispatch(setEbike(bike));
-    console.log('bike from the card', bike);
+    // console.log('bike from the card', bike);
     navigate(`/ebikes/${bike.id}`);
   };
 

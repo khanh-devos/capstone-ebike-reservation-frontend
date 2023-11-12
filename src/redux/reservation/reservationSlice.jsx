@@ -4,11 +4,10 @@ import axios from 'axios';
 const RESERVATION_URL = 'http://localhost:3100/api/v1/reservations';
 const initialState = {
   reservations: [],
-  reservationLoading: false,
-  reservationError: false,
-  reservationSuccess: false,
-  reservationMessage: '',
-  addingSuccess: false,
+  isLoading: false,
+  isError: false,
+  isSuccess: false,
+  message: '',
 };
 
 export const fetchReservations = createAsyncThunk(
@@ -43,7 +42,7 @@ export const addReservation = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Failed : the date might be not available');
+      return thunkAPI.rejectWithValue('Failed : the date might not be booked already by others');
     }
   },
 );
@@ -52,43 +51,45 @@ const reservationSlice = createSlice({
   name: 'reservationSlice',
   initialState,
   reducers: {
-    resetReservationMessage: (state) => ({ ...state, reservationMessage: '' }),
+    resetReservationMessage: (state) => ({ ...state, message: '' }),
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchReservations.pending, (state) => ({
         ...state,
-        reservationLoading: true,
+        isLoading: true,
       }))
       .addCase(fetchReservations.fulfilled, (state, { payload }) => ({
         ...state,
-        reservationLoading: false,
+        isLoading: false,
         reservations: payload,
-        reservationSuccess: true,
+        isSuccess: true,
       }))
       .addCase(fetchReservations.rejected, (state, { payload }) => ({
         ...state,
-        reservationLoading: false,
-        reservationError: true,
-        reservationMessage: payload,
+        isLoading: false,
+        isError: true,
+        message: payload,
       }))
+
+      // Adding a new reservation
       .addCase(addReservation.pending, (state) => ({
         ...state,
-        reservationLoading: true,
-        reservationSuccess: false,
+        isLoading: true,
+        isSuccess: false,
       }))
       .addCase(addReservation.fulfilled, (state) => ({
         ...state,
-        reservationLoading: false,
-        reservationSuccess: true,
-        reservationMessage: 'Successfully created',
+        isLoading: false,
+        isSuccess: true,
+        message: 'Successfully created',
       }))
       .addCase(addReservation.rejected, (state, { payload }) => ({
         ...state,
-        reservationLoading: false,
-        reservationError: true,
-        reservationSuccess: false,
-        reservationMessage: payload,
+        isLoading: false,
+        isError: true,
+        isSuccess: false,
+        message: payload,
       }));
   },
 });

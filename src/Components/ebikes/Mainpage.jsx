@@ -1,11 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import '../../index.css';
+import { fetchEbike } from '../../redux/ebike/ebikeSlice';
 import NavigationPanel from '../NavigationPanel';
 import BikeCarousel from './BikeCarousel';
 
 function Mainpage() {
+  const dispatch = useDispatch();
   const { ebikes: bikes } = useSelector((state) => state.ebikeSlice);
+
+  useEffect(() => {
+    dispatch(fetchEbike());
+  }, [dispatch]);
 
   return (
     <div className="main-conteiner-mainpage">

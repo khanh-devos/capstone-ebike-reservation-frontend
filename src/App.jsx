@@ -26,7 +26,7 @@ import { resetAddEbikeMessage } from './redux/ebike/addingNewbike';
 function App() {
   const dispatch = useDispatch();
   const { message, isLogined } = useSelector((state) => state.authSlice);
-  const { reservationMessage } = useSelector((state) => state.reservationSlice);
+  const { message: addReserveMessage } = useSelector((state) => state.reservationSlice);
   const { addEbikeMessage } = useSelector((state) => state.addingEbikeSlice);
 
   useEffect(() => {
@@ -39,15 +39,15 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       if (message) dispatch(resetMessage());
-      if (reservationMessage) dispatch(resetReservationMessage());
+      if (addReserveMessage) dispatch(resetReservationMessage());
       if (addEbikeMessage) dispatch(resetAddEbikeMessage());
     }, 2000);
-  }, [message, dispatch, reservationMessage, addEbikeMessage]);
+  }, [message, dispatch, addReserveMessage, addEbikeMessage]);
 
   return (
     <div className="myApp">
       { message && <Message message={message} /> }
-      { reservationMessage && <Message message={reservationMessage} />}
+      { addReserveMessage && <Message message={addReserveMessage} />}
       { addEbikeMessage && <Message message={addEbikeMessage} />}
 
       <Router>

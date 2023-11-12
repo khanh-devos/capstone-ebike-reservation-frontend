@@ -71,6 +71,8 @@ body {
 }
 
 .message-container {
+  position: fixed;
+  z-index: 1;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -87,9 +89,9 @@ body {
   min-width: 200px;
   z-index: 1;
   text-align: center;
-  padding: 10px 20px;
+  padding: 20px 40px;
   border-radius: 5px;
-  opacity: 0.8;
+  opacity: 0.9;
   text-transform: uppercase;
   font-weight: bold;
 }

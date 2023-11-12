@@ -55,19 +55,43 @@
 
 .reservation-page {
   padding: 10% 10%;
-  max-width: 99%;
+  position: relative;
+}
+
+.reservation-page-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+  z-index: -1;
+}
+
+.reservation-page-bg-cover {
+  background-color: #97bf0f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
 }
 
 .reservation-form {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   max-width: 20rem;
   gap: 1rem;
   align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .reservation-input {
+  cursor: pointer;
   border: 1px solid black;
 }
 
