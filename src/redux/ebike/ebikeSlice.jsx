@@ -6,7 +6,7 @@ const EBIKE_URL = 'http://localhost:3100/api/v1/ebikes';
 const initialState = {
   ebikes: [],
   ebike: {},
-  isLoading: false,
+  isLoading: true,
   message: '',
 };
 

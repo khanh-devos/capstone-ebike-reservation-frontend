@@ -24,6 +24,7 @@ function BikeCard({ bike }) {
           {`${bike.model} : ${bike.id}`}
         </h2>
         <p className="bike-description">{bike.description}</p>
+        <p className="bike-description">{bike.city}</p>
       </div>
       <ul className="container-icons-card">
         <li className="logo-card-Facebook"><NavLink to="/"><BiLogoFacebook /></NavLink></li>
@@ -39,6 +40,7 @@ BikeCard.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,

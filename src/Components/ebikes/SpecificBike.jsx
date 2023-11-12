@@ -53,7 +53,11 @@ export default function SpecificBike() {
         </div>
         <div className="info-bike">
           <div className="titles-specific-container">
-            <h2 className="name-specific-bike">{bikeModel}</h2>
+            <h2 className="name-specific-bike">
+              {bikeModel}
+              {' '}
+              {`(${selectedBike?.city})`}
+            </h2>
             <p className="deposit-text">-10% deposit any Ebike Purchaset</p>
           </div>
           <div className="payment-c">
