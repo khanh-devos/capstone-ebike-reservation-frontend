@@ -5,9 +5,10 @@
 }
 
 .calendar {
-  margin: 3px 0;
+  margin: 3px auto;
   padding: 3px 5px;
-  max-width: 500px;
+  width: 450px;
+  max-width: 90%;
   border: 1px solid rgb(163, 163, 163);
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);

@@ -66,7 +66,7 @@ export default function NewReservation() {
 
       <div className="reservation-page-bg-cover" />
 
-      <h2><strong>NEW RESERVATION</strong></h2>
+      <h2 className="auth-title reservation-title">BOOK A TEST-RIDE</h2>
 
       <MyCalendar bikeId={bikeId} />
 
@@ -74,7 +74,7 @@ export default function NewReservation() {
 
         <div className="date-input">
           <h5>Select Your City : </h5>
-          <select name="city" onChange={handleBikeCity}>
+          <select name="city" onChange={handleBikeCity} className="reservation-input">
             {
             locations.length > 0 && locations.map((item) => {
               if (item === bike?.city) {
@@ -89,17 +89,24 @@ export default function NewReservation() {
 
         <div className="date-input">
           <h5>Model: </h5>
-          <select name="ebike" onChange={handleBikeModel}>
+          {
+          sameCityBikes.length > 0
+          && (
+          <select name="ebike" onChange={handleBikeModel} className="reservation-input">
             {
-            sameCityBikes.length > 0
-              ? sameCityBikes.map((item) => (
-                <option key={v4()} value={item.id}>
-                  {`${item.model.toUpperCase()} - ${item.id}`}
-                </option>
-              ))
-              : <option value={-1}>NO SERVICE IN THIS CITY !</option>
-          }
+            sameCityBikes.map((item) => (
+              <option key={v4()} value={item.id}>
+                {`${item.model.toUpperCase()} - ${item.id}`}
+              </option>
+            ))
+            }
           </select>
+          )
+          }
+
+          {
+            sameCityBikes.length === 0 && <h3 className="reservation-select-alert">CURRENTLY NO SERVICE IN THIS CITY</h3>
+          }
         </div>
 
         <div className="date-input">

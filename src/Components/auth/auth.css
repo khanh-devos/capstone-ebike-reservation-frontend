@@ -36,6 +36,7 @@
   background: rgb(230, 230, 230);
   border-radius: 5px;
   padding: 3px 30px;
+  font-weight: 500;
 }
 
 .submit-btn:hover {

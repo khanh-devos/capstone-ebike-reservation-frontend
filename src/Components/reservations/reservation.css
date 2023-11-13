@@ -54,9 +54,10 @@
 }
 
 .reservation-page {
-  padding: 10% 10%;
+  padding: 7% 5%;
   position: relative;
   width: 100%;
+  text-align: center;
 }
 
 .reservation-page-background {
@@ -64,18 +65,18 @@
   top: 0;
   left: 0;
   z-index: -1;
-  height: 100%;
+  height: 110%;
   width: 100%;
 }
 
 .reservation-page-bg-cover {
-  background-color: #97bf0f;
+  background-color: #6f8e0a;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.5;
   width: 100%;
-  height: 100%;
+  height: 110%;
   z-index: -1;
 }
 
@@ -90,22 +91,36 @@
   }
 }
 
+.reservation-title {
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+
 .reservation-form {
+  margin: auto;
   margin-top: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
+  width: 450px;
+  max-width: 90%;
   gap: 1rem;
   align-items: flex-start;
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
+.reservation-select-alert {
+  color: red;
+  font-size: 500;
+}
+
 .reservation-input {
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid rgb(140, 140, 140);
+  border-radius: 5px;
+  padding: 0 5px;
 }
 
 .date-input {
