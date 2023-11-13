@@ -100,6 +100,7 @@ function EbikeForm() {
 
         <button type="submit">Submit</button>
       </form>
+      <NavigationPanel />
     </div>
   );
 }

@@ -1,33 +1,63 @@
 .login-page,
 .signup-page {
-  padding: 7% 7%;
+  padding: 13% 5%;
+  align-self: center;
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 .login-form,
 .signup-form {
-  margin-top: 2rem;
+  padding: 2.5rem 0;
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  width: 22rem;
+  max-width: 90%;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: baseline;
+  margin: auto;
 }
 
 .login-input,
 .signup-input {
   border: 1px solid rgb(169, 169, 169);
-  max-width: 300px;
+  width: 100%;
   padding: 3px 5px;
   border-radius: 5px;
 }
 
 .submit-btn {
-  border: 1px solid rgb(233, 233, 233);
-  background: rgb(230, 230, 230);
+  background: #fff;
   border-radius: 5px;
-  padding: 3px 30px;
+  padding: 5px 30px;
+  font-weight: 500;
 }
 
 .submit-btn:hover {
-  background: rgb(87, 163, 255);
+  background: var(--newReservationCoverColor);
+  color: #fff;
+}
+
+.auth-link {
+  padding: 3px 10px;
+  text-align: justify;
+  font-style: italic;
+  color: #fff;
+}
+
+.signup-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.singup-select-title {
+  color: #fff;
+  font-weight: 500;
 }

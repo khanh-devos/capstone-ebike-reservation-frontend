@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './ebikes.css';
 import BikeCard from './BikeCard';
+import NavigationPanel from '../NavigationPanel';
 
 // const mockBikes = [
 //   {
@@ -107,6 +108,7 @@ const BikeCarousel = ({ bikes: mockBikes }) => {
         {'>'}
         {' '}
       </button>
+      <NavigationPanel />
     </div>
   );
 };
