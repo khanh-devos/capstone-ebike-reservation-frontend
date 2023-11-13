@@ -6,6 +6,7 @@ import './reservation.css';
 import { addReservation, fetchReservations } from '../../redux/reservation/reservationSlice';
 import NavigationPanel from '../NavigationPanel';
 import MyCalendar from './MyCalendar';
+import MirrorCover from './cover';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
@@ -59,13 +60,7 @@ export default function NewReservation() {
   return (
     <div className="reservation-page">
 
-      <img
-        className="reservation-page-background"
-        alt="reservarion-background"
-        src={bike?.image || 'https://cdn.shopify.com/s/files/1/1439/6088/files/thin.jpg?width=100;height:100'}
-      />
-
-      <div className="reservation-page-bg-cover" />
+      <MirrorCover bike={bike} />
 
       <h2 className="auth-title reservation-title">BOOK A TEST-RIDE</h2>
 

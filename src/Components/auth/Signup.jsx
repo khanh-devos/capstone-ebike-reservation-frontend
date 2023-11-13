@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { fetchSignup } from '../../redux/auth/authSlice';
+import MirrorCover from '../reservations/cover';
 import './auth.css';
 
 function Signup() {
@@ -39,13 +40,7 @@ function Signup() {
     <div className="signup-page">
       <h2 className="auth-title">REGISTER</h2>
 
-      <img
-        className="reservation-page-background"
-        alt="reservarion-background"
-        src="https://cdn.shopify.com/s/files/1/1439/6088/files/thin.jpg?width=100;height:100"
-      />
-
-      <div className="reservation-page-bg-cover" />
+      <MirrorCover bike={null} />
 
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
