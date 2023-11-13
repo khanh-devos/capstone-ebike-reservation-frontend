@@ -39,7 +39,7 @@ function NavigationPanel() {
           <button type="button" id="closeMenuButton" aria-label="Close menu" onClick={removeNavPanel}>
             <HiXMark className="text-[40px]" />
           </button>
-          <img className="w-1/2 h-1/5 block mx-auto" src={logo} alt="car logo" />
+          <img className="w-1/2 h-1/5 logo block mx-auto" src={logo} alt="car logo" />
           <div className="flex flex-col w-full h-4/5 absolute md:left-0 bottom-0 md:pl-3 justify-between">
             <ul className="mt-10">
               <li><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#3f4235] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
