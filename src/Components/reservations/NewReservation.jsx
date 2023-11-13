@@ -8,7 +8,6 @@ import MyCalendar from './MyCalendar';
 import MirrorCover from './cover';
 import NavigationPanel from '../NavigationPanel';
 
-
 export default function NewReservation() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -128,7 +127,7 @@ export default function NewReservation() {
           />
         </div>
 
-        <button className="submit-btn" type="submit">SUBMIT</button>
+        <button className="submit-btn" type="submit">BOOK</button>
 
       </form>
       <NavigationPanel />
