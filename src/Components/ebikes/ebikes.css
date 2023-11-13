@@ -34,13 +34,13 @@
   justify-content: center;
 }
 
-#closeMenuButton{
+#closeMenuButton {
   position: fixed;
   top: 0;
   left: 0;
 }
 
-#openMenuButton{
+#openMenuButton {
   position: fixed;
   top: 0;
   left: 0;
