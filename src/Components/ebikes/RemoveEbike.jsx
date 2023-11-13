@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteEbike } from '../../redux/ebike/ebikeSlice';
+import './ebikes.css';
 
 function RemoveEbike() {
   const dispatch = useDispatch();
@@ -11,13 +12,13 @@ function RemoveEbike() {
     dispatch(deleteEbike(id));
   };
   return (
-    <div className='container'>
-      <h1>RemoveEbike</h1>
-      <div className="container">
+    <div className="container">
+      <h1 className="title">RemoveEbike</h1>
+      <div className="container ">
         {
                 ebikes && ebikes.length > 0 ? ebikes.map((ebike) => (ebike.seller_id === user.id
                   ? (
-                    <div key={ebike.id} className="table_row">
+                    <div key={ebike.id} className="table_row_2">
                       <div className="table_item">{ebike.model}</div>
                       <div className="table_item">
                         <button className="btn btn-delete" type="button" onClick={() => handleDeleteEbike(ebike.id)}>

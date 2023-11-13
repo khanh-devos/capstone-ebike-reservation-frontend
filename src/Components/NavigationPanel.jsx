@@ -43,7 +43,7 @@ function NavigationPanel() {
           <div className="flex flex-col w-full h-4/5 absolute md:left-0 bottom-0 md:pl-3 justify-between">
             <ul className="mt-10">
               <li><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#3f4235] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
-              <li><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
+              <li><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/removeEbike">REMOVE BIKE</NavLink></li>
               {isLogined && isAdmin && <li><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>}
               {isLogined && (
                 <>
