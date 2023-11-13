@@ -60,7 +60,7 @@ export default function NewReservation() {
   return (
     <div className="reservation-page">
 
-      <MirrorCover bike={bike} />
+      <MirrorCover />
 
       <h2 className="auth-title reservation-title">BOOK A TEST-RIDE</h2>
 
@@ -70,7 +70,7 @@ export default function NewReservation() {
 
         <div className="date-input">
           <h5>Select Your City : </h5>
-          <select name="city" onChange={handleBikeCity} className="reservation-input">
+          <select name="city" onChange={handleBikeCity} className="reservation-input city-selection">
             {
             locations.length > 0 && locations.map((item) => {
               if (item === bike?.city) {

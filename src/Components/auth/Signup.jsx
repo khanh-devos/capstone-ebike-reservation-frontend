@@ -40,7 +40,7 @@ function Signup() {
     <div className="signup-page">
       <h2 className="auth-title">REGISTER</h2>
 
-      <MirrorCover bike={null} />
+      <MirrorCover />
 
       <form className="signup-form" onSubmit={handleSubmit}>
         <input

@@ -31,7 +31,7 @@ function Loginpage() {
     <div className="login-page">
       <h2 className="auth-title">WELCOME</h2>
 
-      <MirrorCover bike={null} />
+      <MirrorCover />
 
       <form className="login-form" onSubmit={handleSubmit}>
 
