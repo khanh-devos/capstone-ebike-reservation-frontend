@@ -11,7 +11,6 @@ import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
 import MyReservations from './Components/reservations/MyReservations';
 import Mainpage from './Components/ebikes/Mainpage';
-// import { fetchReservation } from './redux/reservation/reservationSlice';
 import SpecificBike from './Components/ebikes/SpecificBike';
 import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
@@ -19,6 +18,7 @@ import { fetchLocations } from './redux/location/locationSlice';
 import Message from './Message';
 import { resetReservationMessage } from './redux/reservation/reservationSlice';
 import EbikeForm from './Components/EbikeForm';
+import NavigationPanel from './Components/NavigationPanel';
 
 function App() {
   const dispatch = useDispatch();
@@ -39,10 +39,11 @@ function App() {
 
   return (
     <div className="myApp">
-      { message && <Message message={message} /> }
-      { reservationMessage && <Message message={reservationMessage} />}
-
       <Router>
+        <NavigationPanel />
+        {message && <Message message={message} />}
+        {reservationMessage && <Message message={reservationMessage} />}
+
         <div className="App">
           <Routes>
             <Route path="/myreservations" element={<MyReservations />} />
@@ -50,14 +51,11 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/addEbike" element={<EbikeForm />} />
 
-            {
-             !isLogined
-              && (
+            {!isLogined && (
               <>
                 <Route path="/" element={<Homepage />} />
               </>
-              )
-            }
+            )}
 
             <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
             <Route path="/ebikes" element={<Mainpage />} />
@@ -66,7 +64,6 @@ function App() {
         </div>
       </Router>
     </div>
-
   );
 }
 

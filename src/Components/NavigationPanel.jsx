@@ -33,7 +33,7 @@ function NavigationPanel() {
         <HiMenuAlt4 className="text-[34px]" />
       </button>
       {menu && (
-      <nav ref={navbarRef} className="flex flex-col border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">
+      <nav ref={navbarRef} id="hamburg" className="flex flex-col border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">
         <button type="button" aria-label="Close menu" onClick={removeNavPanel}>
           <HiXMark className="text-[30px]" />
         </button>
