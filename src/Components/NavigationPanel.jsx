@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import {
   BiLogoTwitter, BiLogoFacebook, BiLogoInstagram,
 } from 'react-icons/bi';
+import { HiXMark } from 'react-icons/hi2';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { TfiGoogle } from 'react-icons/tfi';
 import { NavLink } from 'react-router-dom';
@@ -34,9 +35,9 @@ function NavigationPanel() {
         <HiMenuAlt4 className="text-[40px]" />
       </button>
       {menu && (
-        <nav ref={navbarRef} className="flex flex-col border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">
+        <nav ref={navbarRef} className="flex flex-col generalMenu border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">
           <button type="button" id="closeMenuButton" aria-label="Close menu" onClick={removeNavPanel}>
-            <HiMenuAlt4 className="text-[40px]" />
+            <HiXMark className="text-[40px]" />
           </button>
           <img className="w-1/2 h-1/5 block mx-auto" src={logo} alt="car logo" />
           <div className="flex flex-col w-full h-4/5 absolute md:left-0 bottom-0 md:pl-3 justify-between">

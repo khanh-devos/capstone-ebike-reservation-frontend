@@ -5,6 +5,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container-titles {
@@ -285,6 +288,19 @@
 
 .rainbow-img {
   height: 95px;
+}
+
+/* Get new point  */
+
+.generalMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 1.3s ease-in-out;
 }
 
 .getInput {
