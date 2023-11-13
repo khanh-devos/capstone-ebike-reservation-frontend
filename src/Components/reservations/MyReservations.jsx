@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservation/reservationSlice';
 import './reservation.css';
+import NavigationPanel from '../NavigationPanel';
 
 function MyReservations() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function MyReservations() {
           )
           : <p>no reservations</p>}
       </div>
+      <NavigationPanel />
     </div>
   );
 }

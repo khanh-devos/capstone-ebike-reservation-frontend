@@ -2,6 +2,7 @@ import '../index.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import NavigationPanel from './NavigationPanel';
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Homepage = () => {
           </ul>
         </div>
       </div>
+      <NavigationPanel />
     </div>
   );
 };

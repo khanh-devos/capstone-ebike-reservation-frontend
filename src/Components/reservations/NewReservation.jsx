@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './reservation.css';
 import { addReservation, fetchReservations } from '../../redux/reservation/reservationSlice';
 import MyCalendar from './MyCalendar';
+import NavigationPanel from '../NavigationPanel';
 
 export default function NewReservation() {
   const dispatch = useDispatch();
@@ -126,6 +127,7 @@ export default function NewReservation() {
         <button className="submit-btn" type="submit">SUBMIT</button>
 
       </form>
+      <NavigationPanel />
     </div>
   );
 }
