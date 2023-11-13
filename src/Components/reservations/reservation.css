@@ -94,7 +94,7 @@
   max-width: 20rem;
   gap: 1rem;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .reservation-input {

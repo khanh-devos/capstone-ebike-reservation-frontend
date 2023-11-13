@@ -101,7 +101,6 @@ const authSlice = createSlice({
         const data = {
           token: payload.token,
           user: payload.user,
-          message: 'Successfully new user created',
         };
 
         localStorage.setItem('ebikeData', JSON.stringify(data));
@@ -111,6 +110,7 @@ const authSlice = createSlice({
           token: payload.token,
           user: payload.user,
           isLogined: true,
+          message: 'Successfully Sign up & Login',
         });
       })
       .addCase(fetchSignup.rejected, (state, { payload }) => ({
