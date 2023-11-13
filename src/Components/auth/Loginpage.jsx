@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { fetchLogin } from '../../redux/auth/authSlice';
+import MirrorCover from '../reservations/cover';
 import './auth.css';
 
 function Loginpage() {
@@ -28,9 +29,12 @@ function Loginpage() {
 
   return (
     <div className="login-page">
-      <h2><strong>WELCOME</strong></h2>
+      <h2 className="auth-title">WELCOME</h2>
+
+      <MirrorCover />
 
       <form className="login-form" onSubmit={handleSubmit}>
+
         <input
           className="login-input"
           placeholder="Name"
@@ -48,6 +52,8 @@ function Loginpage() {
         <button className="submit-btn" type="submit">Login</button>
 
       </form>
+
+      <Link to="/signup" className="auth-link">To the Signup page</Link>
 
     </div>
   );

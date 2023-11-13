@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './reservation.css';
 import { addReservation, fetchReservations } from '../../redux/reservation/reservationSlice';
 import MyCalendar from './MyCalendar';
+import MirrorCover from './cover';
 import NavigationPanel from '../NavigationPanel';
 
 export default function NewReservation() {
@@ -16,7 +17,8 @@ export default function NewReservation() {
 
   const { ebikes } = useSelector((state) => state.ebikeSlice);
   const { id } = useParams();
-  const [bikeId, setBikeId] = useState(id || ebikes.length - 1);
+  const lastbike = ebikes[ebikes.length - 1];
+  const [bikeId, setBikeId] = useState(id.includes(':id') ? lastbike?.id : id);
 
   const bike = ebikes.find((item) => item.id === Number(bikeId));
   const sameCityBikes = ebikes.filter((item) => item.city === bike?.city);
@@ -58,15 +60,9 @@ export default function NewReservation() {
   return (
     <div className="reservation-page">
 
-      <img
-        className="reservation-page-background"
-        alt="reservarion-background"
-        src={bike?.image || 'https://cdn.shopify.com/s/files/1/1439/6088/files/thin.jpg?width=100;height:100'}
-      />
+      <MirrorCover />
 
-      <div className="reservation-page-bg-cover" />
-
-      <h2><strong>NEW RESERVATION</strong></h2>
+      <h2 className="auth-title reservation-title">BOOK A TEST-RIDE</h2>
 
       <MyCalendar bikeId={bikeId} />
 
@@ -74,7 +70,7 @@ export default function NewReservation() {
 
         <div className="date-input">
           <h5>Select Your City : </h5>
-          <select name="city" onChange={handleBikeCity}>
+          <select name="city" onChange={handleBikeCity} className="reservation-input city-selection">
             {
             locations.length > 0 && locations.map((item) => {
               if (item === bike?.city) {
@@ -89,17 +85,24 @@ export default function NewReservation() {
 
         <div className="date-input">
           <h5>Model: </h5>
-          <select name="ebike" onChange={handleBikeModel}>
+          {
+          sameCityBikes.length > 0
+          && (
+          <select name="ebike" onChange={handleBikeModel} className="reservation-input">
             {
-            sameCityBikes.length > 0
-              ? sameCityBikes.map((item) => (
-                <option key={v4()} value={item.id}>
-                  {`${item.model.toUpperCase()} - ${item.id}`}
-                </option>
-              ))
-              : <option value={-1}>NO SERVICE IN THIS CITY !</option>
-          }
+            sameCityBikes.map((item) => (
+              <option key={v4()} value={item.id}>
+                {`${item.model.toUpperCase()} - ${item.id}`}
+              </option>
+            ))
+            }
           </select>
+          )
+          }
+
+          {
+            sameCityBikes.length === 0 && <h3 className="reservation-select-alert">CURRENTLY NO SERVICE IN THIS CITY</h3>
+          }
         </div>
 
         <div className="date-input">
@@ -124,7 +127,7 @@ export default function NewReservation() {
           />
         </div>
 
-        <button className="submit-btn" type="submit">SUBMIT</button>
+        <button className="submit-btn" type="submit">BOOK</button>
 
       </form>
       <NavigationPanel />
