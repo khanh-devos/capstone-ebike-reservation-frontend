@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../index.css';
 import { fetchEbike } from '../../redux/ebike/ebikeSlice';
-import NavigationPanel from '../NavigationPanel';
 import BikeCarousel from './BikeCarousel';
 
 function Mainpage() {
@@ -20,11 +19,8 @@ function Mainpage() {
           <h1 className="title-main-page">LATEST MODELS</h1>
           <h4 className="subtitle-main-page">Please select a Vespa Model</h4>
         </div>
-
         <BikeCarousel bikes={bikes} />
-
       </div>
-      <NavigationPanel />
     </div>
   );
 }

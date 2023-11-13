@@ -19,7 +19,7 @@ export const fetchEbike = createAsyncThunk(
           'content-type': 'application/json',
         },
       });
-
+      console.log('calling fetch ebike', res.data);
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue('ebikes fetching failed');

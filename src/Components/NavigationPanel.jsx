@@ -43,7 +43,7 @@ function NavigationPanel() {
           <ul className="mt-10">
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#3f4235] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
 
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
+            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/removeEbike">REMOVE BIKE</NavLink></li>
 
             {
               isLogined && isAdmin && <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>
