@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { v4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { postEbike } from '../../redux/ebike/addingNewbike';
-import NavigationPanel from '../NavigationPanel';
 
 function EbikeForm() {
   const dispatch = useDispatch();
@@ -101,8 +100,6 @@ function EbikeForm() {
 
         <button type="submit">Submit</button>
       </form>
-
-      <NavigationPanel />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../index.css';
 import { fetchEbike } from '../../redux/ebike/ebikeSlice';
-import NavigationPanel from '../NavigationPanel';
 import BikeCarousel from './BikeCarousel';
 
 function Mainpage() {
@@ -24,7 +23,6 @@ function Mainpage() {
         <BikeCarousel bikes={bikes} />
 
       </div>
-      <NavigationPanel />
     </div>
   );
 }

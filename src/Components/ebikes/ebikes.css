@@ -34,7 +34,13 @@
   justify-content: center;
 }
 
-#hamburg {
+#closeMenuButton{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#openMenuButton{
   position: fixed;
   top: 0;
   left: 0;
