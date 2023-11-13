@@ -16,7 +16,8 @@ export default function NewReservation() {
 
   const { ebikes } = useSelector((state) => state.ebikeSlice);
   const { id } = useParams();
-  const [bikeId, setBikeId] = useState(id || ebikes.length - 1);
+  const lastbike = ebikes[ebikes.length - 1];
+  const [bikeId, setBikeId] = useState(id.includes(':id') ? lastbike?.id : id);
 
   const bike = ebikes.find((item) => item.id === Number(bikeId));
   const sameCityBikes = ebikes.filter((item) => item.city === bike?.city);
