@@ -10,7 +10,7 @@ const initialState = {
   user: localData ? localData.user : {},
   isLoading: true,
   token: localData ? localData.token : '',
-  message: null,
+  message: '',
   isLogined: !!localData,
 };
 
@@ -83,6 +83,7 @@ const authSlice = createSlice({
           token: payload.token,
           user: payload.user,
           isLogined: true,
+          message: 'Successfully Logined',
         });
       })
       .addCase(fetchLogin.rejected, (state, { payload }) => ({
@@ -109,6 +110,7 @@ const authSlice = createSlice({
           token: payload.token,
           user: payload.user,
           isLogined: true,
+          message: 'Successfully Sign up & Login',
         });
       })
       .addCase(fetchSignup.rejected, (state, { payload }) => ({

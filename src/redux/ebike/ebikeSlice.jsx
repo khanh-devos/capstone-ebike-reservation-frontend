@@ -7,7 +7,7 @@ const initialState = {
   ebikes: [],
   ebike: {},
   isLoading: true,
-  message: null,
+  message: '',
 };
 
 export const fetchEbike = createAsyncThunk(
@@ -49,10 +49,7 @@ const ebikeSlice = createSlice({
   name: 'fetchEbikes',
   initialState,
   reducers: {
-    setEbike: (state, { payload }) => {
-      console.log('payload', payload);
-      return { ...state, ebike: payload };
-    },
+    setEbike: (state, { payload }) => ({ ...state, ebike: payload }),
     resetMessage: (state) => ({ ...state, message: null }),
   },
   extraReducers: (builder) => {
@@ -68,7 +65,7 @@ const ebikeSlice = createSlice({
       }))
       .addCase(fetchEbike.rejected, (state) => ({
         ...state,
-        isLoading: true,
+        isLoading: false,
       }))
       .addCase(deleteEbike.pending, (state) => ({
         ...state,

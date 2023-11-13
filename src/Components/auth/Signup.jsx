@@ -62,7 +62,6 @@ function Signup() {
           placeholder="Password"
           type="password"
           name="password"
-          value="@manda123"
           required
         />
 
@@ -71,7 +70,6 @@ function Signup() {
           placeholder="Password confirmation"
           type="password"
           name="passwordConfirmation"
-          value="@manda123"
           required
         />
 

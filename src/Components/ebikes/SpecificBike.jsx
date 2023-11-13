@@ -20,13 +20,14 @@ export default function SpecificBike() {
     if (!user) navigate('/login');
   }, [user, navigate]);
 
-  console.log('ebikes', ebikes, bike, user);
   if (!ebike) {
     bike = ebikes.find((b) => b.id === parseInt(id, 10));
   }
 
-  const bikeName = bike ? bike.name : 'Bike not found';
-  const bikeImg = bike ? bike.image : 'Bike image not found';
+  const selectedBike = ebikes.find((b) => b.id === parseInt(id, 10));
+  const bikeModel = selectedBike ? selectedBike.model : 'Bike not found';
+  const bikeImg = selectedBike ? selectedBike.image : 'Bike image not found';
+  const bikePrice = selectedBike ? selectedBike.price : 'Bike price not found';
 
   const handleReserve = () => navigate(`/ebikes/${id}/reservations/new`);
 
@@ -41,7 +42,7 @@ export default function SpecificBike() {
     } else {
       setErrorMessage(true);
     }
-  }, [message, navigate]);
+  }, [message, navigate, dispatch]);
 
   if (isLoading) return <h1>Loading...</h1>;
   return (
@@ -52,21 +53,25 @@ export default function SpecificBike() {
         </div>
         <div className="info-bike">
           <div className="titles-specific-container">
-            <h2 className="name-specific-bike">{bikeName}</h2>
-            <p className="deposit-text">-£350 deposit any Vespa Purchaset</p>
+            <h2 className="name-specific-bike">
+              {bikeModel}
+              {' '}
+              {`(${selectedBike?.city})`}
+            </h2>
+            <p className="deposit-text">-10% deposit any Ebike Purchaset</p>
           </div>
           <div className="payment-c">
             <div className="specification-1">
               <p className="left-text">Finance free</p>
-              <p className="right-text">£129</p>
+              <p className="right-text">{`£${bikePrice}`}</p>
             </div>
             <div className="specification-2">
               <p className="left-text">Option to purchase fee</p>
-              <p className="right-text">£249</p>
+              <p className="right-text">+10%</p>
             </div>
             <div className="specification-3">
               <p className="left-text">Total ammount payable</p>
-              <p className="right-text">£9,879</p>
+              <p className="right-text">{`£${bikePrice}`}</p>
             </div>
             <div className="specification-4">
               <p className="left-text">Duration</p>

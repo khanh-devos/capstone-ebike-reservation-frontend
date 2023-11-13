@@ -10,7 +10,7 @@
   - [🛠️ Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-      [🚀 Live Demo](#live-demo)
+      <!-- [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -26,7 +26,8 @@
 
 # 🚲 Capstone Ebike Reservation Frontend
 
-Capstone Ebike Reservation Frontend is the Final Capstone project, creating a web app to book appointments, initially for motorcycles but customizable for various services. Unique projects in your portfolio can enhance your job prospects.
+Capstone Ebike Reservation Frontend is a frontend for the Final Capstone project, creating a web app to book a test-ride service.
+Link to the [backend](https://github.com/khanh-devos/capstone-ebike-reservation-backend)
 
 **Objectives:**
 
@@ -82,11 +83,11 @@ Capstone Ebike Reservation Frontend is the Final Capstone project, creating a we
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## LIVE DEMO
+<!-- ## LIVE DEMO
 
 🚀 Live Demo
 
-To see my app deployed go to this link: (https://)
+To see my app deployed go to this link: (https://) -->
 
 <!-- You can also see a video of mine of a demonstration in this link (https://www.youtube.com/watch?v=D0-xjcWNNj4) -->
 
@@ -100,7 +101,7 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- ruby
+- Node, Reactjs
 - any code editor but mostly use Vs Code and Sublime Text.
 
 ### Setup

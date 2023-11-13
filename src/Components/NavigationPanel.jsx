@@ -12,7 +12,8 @@ import useClickOutside from '../hooks/useClickOutside';
 import { logout } from '../redux/auth/authSlice';
 
 function NavigationPanel() {
-  const { isLogined } = useSelector((state) => state.authSlice);
+  const { isLogined, user } = useSelector((state) => state.authSlice);
+  const isAdmin = user.role === 'admin';
   const dispatch = useDispatch();
   const [menu, setMenu] = useState(false);
   const navbarRef = useRef(null);
@@ -29,8 +30,8 @@ function NavigationPanel() {
 
   return (
     <>
-      <button type="button" id="hamburg" className="md:fixed top-5 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
-        <HiMenuAlt4 className="text-[34px]" />
+      <button type="button" id="hamburg" className="md:fixed top-15 left-5" onClick={() => setMenu(true)} aria-label="Open menu">
+        <HiMenuAlt4 className="text-[40px]" />
       </button>
       {menu && (
       <nav ref={navbarRef} className="flex flex-col border-r bg-white text-center md:text-left border-white md:w-[16%] lg:w-[12%] fixed md:absolute top-0 left-0 bottom-0 right-0">
@@ -42,13 +43,17 @@ function NavigationPanel() {
           <ul className="mt-10">
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#3f4235] hover:text-white font-[900] text-xs my-2 block" to="/ebikes">E-BIKE</NavLink></li>
 
-            <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>
             <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">REMOVE BIKE</NavLink></li>
+
+            {
+              isLogined && isAdmin && <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/addEbike">ADD BIKE</NavLink></li>
+            }
 
             {
             isLogined && (
             <>
               <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/myreservations">MY RESERVATIONS</NavLink></li>
+              <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/ebikes/:id/reservations/new">BOOK A TEST DRIVE</NavLink></li>
               <li className="">
                 <NavLink
                   onClick={() => { removeNavPanel(); handleLogout(); }}
@@ -60,6 +65,11 @@ function NavigationPanel() {
               </li>
             </>
             )
+            }
+
+            {
+              !isLogined && <li className=""><NavLink onClick={removeNavPanel} className="p-2 hover:bg-[#97BF11] hover:text-white font-[900] text-xs my-2 block" to="/">HOME</NavLink></li>
+
             }
 
           </ul>

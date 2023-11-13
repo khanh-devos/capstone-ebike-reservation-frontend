@@ -12,7 +12,7 @@ function BikeCard({ bike }) {
   const dispatch = useDispatch();
   const clickAbike = () => {
     dispatch(setEbike(bike));
-    console.log('bike from the card', bike);
+    // console.log('bike from the card', bike);
     navigate(`/ebikes/${bike.id}`);
   };
 
@@ -20,8 +20,11 @@ function BikeCard({ bike }) {
     <div className="card" onClick={clickAbike}>
       <div className="bike-card">
         <img className="img-bike" src={bike.image} alt={bike.name} />
-        <h2 className="name-bike">{bike.name}</h2>
+        <h2 className="name-bike">
+          {`${bike.model} : ${bike.id}`}
+        </h2>
         <p className="bike-description">{bike.description}</p>
+        <p className="bike-description">{bike.city}</p>
       </div>
       <ul className="container-icons-card">
         <li className="logo-card-Facebook"><NavLink to="/"><BiLogoFacebook /></NavLink></li>
@@ -36,6 +39,8 @@ BikeCard.propTypes = {
   bike: PropTypes.shape({
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,

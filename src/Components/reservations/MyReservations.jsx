@@ -12,9 +12,9 @@ function MyReservations() {
     dispatch(fetchReservations());
   }, [dispatch]);
   return (
-    <div className="flex justify-center  items-center container">
+    <div className="flex justify-center items-center container">
       <h1 className="title">
-        {`${user.name}s Reservations`}
+        {`${user.name}'s Reservations`}
       </h1>
       <div className="container">
         { reservations && reservations.length > 0
@@ -25,16 +25,20 @@ function MyReservations() {
                 <div className="table_header_item">Location</div>
                 <div className="table_header_item">From</div>
                 <div className="table_header_item">To</div>
+
               </div>
               {
-            reservations.map((reservation) => (
-              <div key={reservation.id} className="table_row">
-                <div className="table_item">{reservation.ebike.name}</div>
-                <div className="table_item">{reservation.location}</div>
-                <div className="table_item">{reservation.formated_starting_date}</div>
-                <div className="table_item">{reservation.formated_ending_date}</div>
-              </div>
-            ))
+            reservations
+              .filter((item) => item.user_id === user.id)
+              .map((reservation) => (
+                <div key={reservation.id} className="table_row">
+                  <div className="table_item">{reservation.ebike.model}</div>
+                  <div className="table_item">{reservation.location}</div>
+                  <div className="table_item">{reservation.formated_starting_date}</div>
+                  <div className="table_item">{reservation.formated_ending_date}</div>
+
+                </div>
+              ))
             }
             </div>
           )
