@@ -115,29 +115,26 @@ Clone this repository to your desired folder:
 
 ```
 
-<!-- ### Install
+ ### Install
 
 Install this project with:
 
 ```sh
+
  npm install
-``` -->
 
-<!-- ### Usage
+``` 
 
-To run the project, execute the following command:
+ ### Usage
 
-```sh
-  npm run start
-``` -->
-
-<!-- ### Run tests
-
-To run tests, run the following command:
+To start the project, execute the following command:
 
 ```sh
-  rubocop -A
-``` -->
+
+  npm start
+
+```
+
 
 ### Run Linter Tests
 
