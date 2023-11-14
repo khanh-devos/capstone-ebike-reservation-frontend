@@ -266,6 +266,10 @@
   background-color: #7dd97d;
 }
 
+.btn-delete {
+  background-color: #bb0303;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
