@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const LOCATION_URL = 'http://localhost:3100/api/v1/locations';
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+const LOCATION_URL = `${backendURL}/ebike_models`;
 
 const initialState = {
   locations: [],
