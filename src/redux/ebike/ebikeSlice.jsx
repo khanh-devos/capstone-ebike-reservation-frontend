@@ -2,9 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const backendURL = process.env.REACT_APP_BACKEND_URL;
-console.log('backendURL', backendURL);
 const EBIKE_URL = `${backendURL}/ebikes`;
-console.log('EBIKE_URL', EBIKE_URL);
 const initialState = {
   ebikes: [],
   ebike: {},
@@ -21,7 +19,6 @@ export const fetchEbike = createAsyncThunk(
           'content-type': 'application/json',
         },
       });
-      console.log('calling fetch ebike', res.data);
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue('ebikes fetching failed');
