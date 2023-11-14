@@ -217,6 +217,14 @@
   justify-content: space-between;
 }
 
+.specification-3 {
+  font-size: 11px;
+  display: flex;
+  background-color: rgb(210, 209, 209);
+  padding: 4px;
+  justify-content: space-between;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
