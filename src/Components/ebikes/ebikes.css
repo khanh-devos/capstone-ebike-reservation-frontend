@@ -237,6 +237,11 @@
   display: flex;
 }
 
+.APR-percentage {
+  font-weight: 700;
+  padding-right: 10px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
