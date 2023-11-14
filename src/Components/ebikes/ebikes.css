@@ -42,6 +42,12 @@
   left: 0;
 }
 
+#openMenuButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .bike-card {
   display: flex;
   flex-direction: column;
@@ -51,22 +57,16 @@
   padding-right: 30px;
 }
 
-#openMenuButton {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.img-bike {
-  height: 165px;
-}
-
 .name-bike {
   font-weight: 700;
   position: relative;
   padding-bottom: 10px;
   width: 140px;
   text-align: center;
+}
+
+.img-bike {
+  height: 165px;
 }
 
 .bike-description {
@@ -125,17 +125,6 @@
   cursor: pointer;
 }
 
-.arrow-left {
-  background-color: darkgray;
-  height: 45px;
-  color: aliceblue;
-  width: 80px;
-  text-align: right;
-  padding-right: 15px;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
-}
-
 .arrow-right {
   background-color: darkgray;
   height: 45px;
@@ -145,6 +134,17 @@
   padding-left: 15px;
   border-bottom-left-radius: 25px;
   border-top-left-radius: 25px;
+}
+
+.arrow-left {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .arrow-left.active {
