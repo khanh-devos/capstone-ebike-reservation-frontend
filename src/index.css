@@ -90,3 +90,11 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.mainclass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
