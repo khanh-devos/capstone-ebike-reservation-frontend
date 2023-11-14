@@ -186,6 +186,11 @@
   height: 20px;
 }
 
+.titles-specific-container {
+  text-align: right;
+  padding-bottom: 25px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
