@@ -285,6 +285,10 @@
   justify-content: right;
 }
 
+.rainbow-img {
+  height: 95px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
