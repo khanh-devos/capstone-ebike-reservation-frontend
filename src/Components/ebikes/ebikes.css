@@ -302,6 +302,15 @@
   left: 0;
 }
 
+.logo {
+  margin-top: 15%;
+  width: 45%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* end of my design */
 .ebike-location-input,
 .ebike-price-input,
