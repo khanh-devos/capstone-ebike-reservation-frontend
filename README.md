@@ -104,7 +104,7 @@ In order to run this project you need:
 - Node, Reactjs
 - any code editor but mostly use Vs Code and Sublime Text.
 
-### Setup
+### Setup <a name="setup"></a>
 
 Clone this repository to your desired folder:
 
@@ -115,29 +115,22 @@ Clone this repository to your desired folder:
 
 ```
 
-<!-- ### Install
+### Install <a name="install"></a>
 
 Install this project with:
 
 ```sh
- npm install
-``` -->
+  npm install
+```
 
-<!-- ### Usage
+### Usage <a name="usage"></a>
 
 To run the project, execute the following command:
 
 ```sh
   npm run start
-``` -->
+```
 
-<!-- ### Run tests
-
-To run tests, run the following command:
-
-```sh
-  rubocop -A
-``` -->
 
 ### Run Linter Tests <a name="run-tests"></a>
 
