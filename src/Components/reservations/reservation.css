@@ -140,3 +140,29 @@
   gap: 0.5rem;
   align-items: center;
 }
+
+.card {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border: #82b300 2px solid;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(26, 53, 1, 0.75);
+}
+
+.card_image {
+  width: 40%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card_info {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.card_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -91,7 +91,7 @@ const NewReservation = () => {
             {
             sameCityBikes.map((item) => (
               <option key={v4()} value={item.id}>
-                {`${item.model.toUpperCase()} - ${item.id}`}
+                {`${item.model?.toUpperCase()} - ${item.id}`}
               </option>
             ))
             }
