@@ -196,6 +196,11 @@
   font-size: 35px;
 }
 
+.deposit-text {
+  font-weight: 700;
+  font-size: 10px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
