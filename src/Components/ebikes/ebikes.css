@@ -180,6 +180,12 @@
   width: 100px;
 }
 
+.container-rainbow {
+  background-color: #199919;
+  width: 20px;
+  height: 20px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
