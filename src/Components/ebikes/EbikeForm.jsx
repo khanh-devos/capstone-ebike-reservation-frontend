@@ -102,6 +102,6 @@ const EbikeForm = () => {
       </form>
     </div>
   );
-}
+};
 
 export default EbikeForm;

@@ -32,7 +32,7 @@ const BikeCard = ({ bike }) => {
       </ul>
     </div>
   );
-}
+};
 
 BikeCard.propTypes = {
   bike: PropTypes.shape({

@@ -131,6 +131,6 @@ const NewReservation = () => {
       </form>
     </div>
   );
-}
+};
 
 export default NewReservation;

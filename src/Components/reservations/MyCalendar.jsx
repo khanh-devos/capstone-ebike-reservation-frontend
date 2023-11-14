@@ -16,7 +16,7 @@ const MyCalendar = ({ bikeId }) => {
   return (
     <Calendar bookings={bookings} showNumberOfMonths={1} showControls />
   );
-}
+};
 
 MyCalendar.propTypes = {
   bikeId: PropTypes.number.isRequired,
