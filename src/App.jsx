@@ -22,6 +22,8 @@ import { fetchReservations, resetReservationMessage } from './redux/reservation/
 import EbikeForm from './Components/ebikes/EbikeForm';
 import { fetchEbikeModels } from './redux/ebike_models/ebikeModelSlice';
 import { resetAddEbikeMessage } from './redux/ebike/addingNewbike';
+import NavigationPanel from './Components/NavigationPanel';
+import RemoveEbike from './Components/ebikes/RemoveEbike';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -63,7 +65,9 @@ const App = () => {
             <Route path="/ebikes/:id/reservations/new" element={<NewReservation />} />
             <Route path="/ebikes" element={<Mainpage />} />
             <Route path="/ebikes/:id" element={<SpecificBike />} />
+            <Route path="/removeEbike" element={<RemoveEbike />} />
           </Routes>
+          <NavigationPanel />
         </div>
       </Router>
 
