@@ -46,10 +46,22 @@ const MyReservations = () => {
                     <div key={reservation.id} className="card">
                       <img src={reservation.ebike.image} alt="ebike" className="card_image" />
                       <div className="card_info">
-                        <div className="card_item"><strong>model:</strong>{reservation.ebike.model}</div>
-                        <div className="card_item"><strong>location:</strong>{reservation.location}</div>
-                        <div className="card_item"><strong>starting_date :</strong>{reservation.formated_starting_date}</div>
-                        <div className="card_item"><strong>ending_date :</strong>{reservation.formated_ending_date}</div>
+                        <div className="card_item">
+                          <strong>model:</strong>
+                          <small>{reservation.ebike.model}</small>
+                        </div>
+                        <div className="card_item">
+                          <strong>location:</strong>
+                          <small>{reservation.location}</small>
+                        </div>
+                        <div className="card_item">
+                          <strong>starting_date :</strong>
+                          <small>{reservation.formated_starting_date}</small>
+                        </div>
+                        <div className="card_item">
+                          <strong>ending_date :</strong>
+                          <small>{reservation.formated_ending_date}</small>
+                        </div>
                       </div>
                     </div>
                   ))
