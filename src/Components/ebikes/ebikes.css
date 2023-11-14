@@ -175,6 +175,11 @@
   border-top-right-radius: 25px;
 }
 
+.img-rainbow {
+  height: 100px;
+  width: 100px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
