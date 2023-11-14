@@ -29,7 +29,18 @@
   margin-bottom: 25px;
 }
 
+.bike-slides {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
+#closeMenuButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 /* Get new point  */
 .generalMenu {
