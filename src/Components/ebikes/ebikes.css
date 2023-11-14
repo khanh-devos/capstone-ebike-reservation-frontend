@@ -274,6 +274,11 @@
   background-color: #e04f4f;
 }
 
+.img-specific {
+  height: 350px;
+  padding-right: 60px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
