@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const backendURL = process.env.REACT_APP_BACKEND_API_URL;
-const LOGIN_URL = `${backendURL}/api/login`;
-const SIGNUP_URL = `${backendURL}/api/register`;
+const LOGIN_URL = `${backendURL}/login`;
+const SIGNUP_URL = `${backendURL}/register`;
 
 const localData = JSON.parse(localStorage.getItem('ebikeData'));
 
