@@ -98,6 +98,8 @@ body {
   font-weight: bold;
 }
 
+/* this part of code it contain a general view of this page */
+
 .mainclass {
   display: flex;
   flex-direction: column;
