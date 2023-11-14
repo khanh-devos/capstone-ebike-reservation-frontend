@@ -357,6 +357,20 @@
   background-color: #989a923d;
 }
 
+.getInput button {
+  width: 50%;
+  border: 2px;
+  outline: black;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #97bf0f;
+  color: #fff;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: all 1.3s ease-in-out;
+}
+
 /* end of my design */
 .ebike-location-input,
 .ebike-price-input,
