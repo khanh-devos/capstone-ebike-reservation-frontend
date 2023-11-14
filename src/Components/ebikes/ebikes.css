@@ -42,6 +42,21 @@
   left: 0;
 }
 
+.bike-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#openMenuButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
