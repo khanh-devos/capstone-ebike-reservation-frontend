@@ -371,6 +371,10 @@
   transition: all 1.3s ease-in-out;
 }
 
+.getInput button:hover {
+  cursor: pointer;
+}
+
 /* end of my design */
 .ebike-location-input,
 .ebike-price-input,
