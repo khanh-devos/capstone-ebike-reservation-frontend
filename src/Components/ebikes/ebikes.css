@@ -291,6 +291,17 @@
 }
 
 /* Get new point  */
+.generalMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 13%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 1.3s ease-in-out;
+}
 
 /* end of my design */
 .ebike-location-input,
