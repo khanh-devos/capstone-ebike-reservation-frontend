@@ -147,6 +147,10 @@
   border-top-left-radius: 25px;
 }
 
+.arrow-left.active {
+  background-color: #199919;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
