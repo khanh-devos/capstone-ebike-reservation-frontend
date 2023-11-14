@@ -43,7 +43,7 @@ export const fetchSignup = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Sign up failed');
+      return thunkAPI.rejectWithValue(`Failed: ${err.response.data.error}`);
     }
   },
 );
