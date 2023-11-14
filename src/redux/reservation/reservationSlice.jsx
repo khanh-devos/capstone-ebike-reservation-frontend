@@ -2,7 +2,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const backendURL = process.env.REACT_APP_BACKEND_URL;
-const RESERVATION_URL = 'http://localhost:3100/api/v1/reservations';
+const RESERVATION_URL = `${backendURL}/reservations`;
+
+
+
 const initialState = {
   reservations: [],
   isLoading: false,
