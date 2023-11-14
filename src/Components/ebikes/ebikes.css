@@ -262,6 +262,10 @@
   background-color: #199919;
 }
 
+.btn-reserve:hover {
+  background-color: #7dd97d;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
