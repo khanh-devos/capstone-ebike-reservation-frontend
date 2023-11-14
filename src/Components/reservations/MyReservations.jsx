@@ -13,7 +13,7 @@ const MyReservations = () => {
   return (
     <div className="flex justify-center items-center container">
       <h1 className="title">
-        {`${user.name}'s Reservations`}
+        {`${user.name.toUpperCase()}'s Reservations`}
       </h1>
       <div className="container">
         { reservations && reservations.length > 0

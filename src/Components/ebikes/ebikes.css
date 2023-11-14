@@ -291,7 +291,6 @@
 }
 
 /* Get new point  */
-
 .generalMenu {
   display: flex;
   flex-direction: column;
@@ -388,8 +387,8 @@
 @media only screen and (max-width: 600px) {
   .getInput {
     width: 90%;
-    height: 93%;
-    margin: 0 auto;
+    min-height: 90%;
+    margin: 1rem auto;
   }
 
   .getInput input {
@@ -423,7 +422,7 @@
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 20px 20px 0;
+    margin: 20px 0;
     background-color: #989a923d;
   }
 

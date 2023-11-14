@@ -35,7 +35,7 @@
 }
 
 .table {
-  width: 80%;
+  width: 90%;
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -45,7 +45,7 @@
 
 .table_row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% auto;
 }
 
 .table_item {
