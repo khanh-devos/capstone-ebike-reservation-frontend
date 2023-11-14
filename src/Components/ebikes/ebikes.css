@@ -1,4 +1,3 @@
-
 .carousel-container {
   width: 100%;
   display: flex;
@@ -58,16 +57,16 @@
   padding-right: 30px;
 }
 
-.img-bike {
-  height: 165px;
-}
-
 .name-bike {
   font-weight: 700;
   position: relative;
   padding-bottom: 10px;
   width: 140px;
   text-align: center;
+}
+
+.img-bike {
+  height: 165px;
 }
 
 .bike-description {
@@ -126,17 +125,6 @@
   cursor: pointer;
 }
 
-.arrow-left {
-  background-color: darkgray;
-  height: 45px;
-  color: aliceblue;
-  width: 80px;
-  text-align: right;
-  padding-right: 15px;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
-}
-
 .arrow-right {
   background-color: darkgray;
   height: 45px;
@@ -146,6 +134,17 @@
   padding-left: 15px;
   border-bottom-left-radius: 25px;
   border-top-left-radius: 25px;
+}
+
+.arrow-left {
+  background-color: darkgray;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .arrow-left.active {
