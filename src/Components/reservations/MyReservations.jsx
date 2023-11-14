@@ -33,7 +33,32 @@ const MyReservations = () => {
       <h1 className="title">
         {`${user.name.toUpperCase()}'s Reservations`}
       </h1>
-      
+      {screenSize === 'small'
+        ? (
+          <div className="container">
+            { reservations && reservations.length > 0
+              ? (
+                <div className="table">
+                  {
+                reservations
+                  .filter((item) => item.user_id === user.id)
+                  .map((reservation) => (
+                    <div key={reservation.id} className="card">
+                      <img src={reservation.ebike.image} alt="ebike" className="card_image" />
+                      <div className="card_info">
+                        <div className="card_item"><strong>model:</strong>{reservation.ebike.model}</div>
+                        <div className="card_item"><strong>location:</strong>{reservation.location}</div>
+                        <div className="card_item"><strong>starting_date :</strong>{reservation.formated_starting_date}</div>
+                        <div className="card_item"><strong>ending_date :</strong>{reservation.formated_ending_date}</div>
+                      </div>
+                    </div>
+                  ))
+                }
+                </div>
+              )
+              : <p>no reservations</p>}
+          </div>
+        )
         : (
           <div className="container">
             { reservations && reservations.length > 0
