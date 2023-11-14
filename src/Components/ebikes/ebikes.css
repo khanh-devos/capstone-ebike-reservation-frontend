@@ -191,6 +191,11 @@
   padding-bottom: 25px;
 }
 
+.name-specific-bike {
+  font-weight: 700;
+  font-size: 35px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
