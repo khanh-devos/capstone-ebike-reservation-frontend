@@ -225,6 +225,14 @@
   justify-content: space-between;
 }
 
+.specification-4 {
+  font-size: 11px;
+  display: flex;
+  background-color: white;
+  padding: 4px;
+  justify-content: space-between;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
