@@ -4,8 +4,6 @@ import axios from 'axios';
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 const EBIKE_MODEL_URL = `${backendURL}/ebike_models`;
 
-
-
 const initialState = {
   ebikeModels: [],
   isLoading: true,
