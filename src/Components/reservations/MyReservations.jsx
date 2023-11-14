@@ -43,22 +43,22 @@ const MyReservations = () => {
                 reservations
                   .filter((item) => item.user_id === user.id)
                   .map((reservation) => (
-                    <div key={reservation.id} className="card">
-                      <img src={reservation.ebike.image} alt="ebike" className="card_image" />
-                      <div className="card_info">
-                        <div className="card_item">
+                    <div key={reservation.id} className="reservation_card">
+                      <img src={reservation.ebike.image} alt="ebike" className="reservation_card_image" />
+                      <div className="reservation_card_info">
+                        <div className="reservation_card_item">
                           <strong>model:</strong>
                           <p>{reservation.ebike.model}</p>
                         </div>
-                        <div className="card_item">
+                        <div className="reservation_card_item">
                           <strong>location:</strong>
                           <p>{reservation.location}</p>
                         </div>
-                        <div className="card_item">
+                        <div className="reservation_card_item">
                           <strong>starting_date :</strong>
                           <p>{reservation.formated_starting_date}</p>
                         </div>
-                        <div className="card_item">
+                        <div className="reservation_card_item">
                           <strong>ending_date :</strong>
                           <p>{reservation.formated_ending_date}</p>
                         </div>
