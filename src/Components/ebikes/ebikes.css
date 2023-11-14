@@ -279,6 +279,12 @@
   padding-right: 60px;
 }
 
+.rainbow-contaienr {
+  display: flex;
+  width: 180px;
+  justify-content: right;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
