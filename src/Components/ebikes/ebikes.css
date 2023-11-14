@@ -57,6 +57,18 @@
   left: 0;
 }
 
+.img-bike {
+  height: 165px;
+}
+
+.name-bike {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  width: 140px;
+  text-align: center;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
