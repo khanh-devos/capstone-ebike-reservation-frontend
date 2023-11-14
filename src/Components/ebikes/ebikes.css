@@ -252,6 +252,13 @@
   padding-bottom: 25px;
 }
 
+.btn {
+  padding: 5px 15px 5px 15px;
+  border-radius: 100px;
+  color: azure;
+}
+
+
 /* Get new point  */
 .generalMenu {
   display: flex;
