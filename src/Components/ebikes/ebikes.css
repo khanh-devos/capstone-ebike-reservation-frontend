@@ -258,6 +258,10 @@
   color: azure;
 }
 
+.btn-reserve {
+  background-color: #199919;
+}
+
 
 /* Get new point  */
 .generalMenu {
