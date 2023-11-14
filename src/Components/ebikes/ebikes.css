@@ -242,6 +242,16 @@
   padding-right: 10px;
 }
 
+.discover-contaeiner {
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  align-items: end;
+  justify-content: right;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
