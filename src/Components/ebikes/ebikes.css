@@ -300,7 +300,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: all 1.3s ease-in-out;
 }
 
 .logo {
@@ -373,9 +372,7 @@
 }
 
 .getInput button:hover {
-  background-color: #f3f3f4;
-  color: #000;
-  border: 1px solid #464684;
+  cursor: pointer;
 }
 
 .getInput h1 {
@@ -384,6 +381,7 @@
   margin-bottom: 10px;
 }
 
+/* Add my  responsive design */
 @media only screen and (max-width: 600px) {
   .getInput {
     width: 90%;
@@ -442,10 +440,10 @@
     top: 0;
     left: 0;
     transition: all 1.3s ease-in-out;
-    backdrop-filter: blur(20px);
   }
 }
 
+/* end of my design */
 .ebike-location-input,
 .ebike-price-input,
 .ebike-weight-input,
