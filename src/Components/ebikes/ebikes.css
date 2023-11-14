@@ -375,6 +375,12 @@
   cursor: pointer;
 }
 
+.getInput h1 {
+  font-size: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 /* end of my design */
 .ebike-location-input,
 .ebike-price-input,
