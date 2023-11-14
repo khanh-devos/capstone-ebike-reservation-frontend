@@ -2,7 +2,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const EBIKE_URL = 'http://localhost:3100/api/v1/ebikes';
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+const EBIKE_URL = `${backendURL}/ebikes`;
 
 const initialState = {
   addEbikeLoading: false,
