@@ -58,6 +58,7 @@ const EbikeForm = () => {
         <div className="ebike-model-input">
           <h3>Model:</h3>
           <select type="text" required name="model" value={ebikeData.model} onChange={handleChange}>
+            <option value="">Select your ebike model</option>
             {
             ebikeModels.map((item) => (
               <option key={v4()} value={`${item}`}>{item}</option>
@@ -85,6 +86,7 @@ const EbikeForm = () => {
             onChange={handleChange}
             placeholder="City"
           >
+            <option value="">Select your city</option>
             {
             locations.map((item) => (
               <option key={v4()} value={`${item}`}>{item}</option>
