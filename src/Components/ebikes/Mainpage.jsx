@@ -25,6 +25,6 @@ const Mainpage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Mainpage;

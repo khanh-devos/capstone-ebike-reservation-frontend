@@ -104,6 +104,6 @@ const EbikeForm = () => {
       <NavigationPanel />
     </div>
   );
-}
+};
 
 export default EbikeForm;

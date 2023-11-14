@@ -115,6 +115,6 @@ const SpecificBike = () => {
       </button>
     </div>
   );
-}
+};
 
 export default SpecificBike;

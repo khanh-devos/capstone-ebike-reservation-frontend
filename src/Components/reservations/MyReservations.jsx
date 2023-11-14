@@ -47,6 +47,6 @@ const MyReservations = () => {
       <NavigationPanel />
     </div>
   );
-}
+};
 
 export default MyReservations;

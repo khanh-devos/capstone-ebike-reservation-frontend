@@ -133,6 +133,6 @@ const NewReservation = () => {
       <NavigationPanel />
     </div>
   );
-}
+};
 
 export default NewReservation;
