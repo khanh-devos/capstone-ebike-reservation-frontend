@@ -41,3 +41,9 @@ body {
   cursor: pointer;
   transition: all 1.3s ease-in-out;
 }
+
+.btnone:hover {
+  background-color: #f3f3f4;
+  color: #000;
+  border: 1px solid #464684;
+}
