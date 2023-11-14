@@ -48,19 +48,19 @@ const MyReservations = () => {
                       <div className="card_info">
                         <div className="card_item">
                           <strong>model:</strong>
-                          <small>{reservation.ebike.model}</small>
+                          <p>{reservation.ebike.model}</p>
                         </div>
                         <div className="card_item">
                           <strong>location:</strong>
-                          <small>{reservation.location}</small>
+                          <p>{reservation.location}</p>
                         </div>
                         <div className="card_item">
                           <strong>starting_date :</strong>
-                          <small>{reservation.formated_starting_date}</small>
+                          <p>{reservation.formated_starting_date}</p>
                         </div>
                         <div className="card_item">
                           <strong>ending_date :</strong>
-                          <small>{reservation.formated_ending_date}</small>
+                          <p>{reservation.formated_ending_date}</p>
                         </div>
                       </div>
                     </div>
