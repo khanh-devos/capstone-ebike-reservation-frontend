@@ -21,10 +21,17 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bolder;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .title {
+    font-size: 3rem;
+  }
 }
 
 .table {
