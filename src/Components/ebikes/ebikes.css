@@ -164,6 +164,16 @@
   padding: 40px;
 }
 
+.back-button {
+  background-color: #199919;
+  height: 45px;
+  color: aliceblue;
+  width: 80px;
+  text-align: right;
+  padding-right: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
 
 /* Get new point  */
 .generalMenu {
