@@ -75,7 +75,7 @@ Link to the [backend](https://github.com/khanh-devos/capstone-ebike-reservation-
   </ul>
 </details> -->
 
-## Key Features
+## Key Features <a name="key-features"></a>
 
 - Customize design for various services.
 - Implement user authentication and navigation.
@@ -93,7 +93,7 @@ To see my app deployed go to this link: (https://) -->
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started
+## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
@@ -139,7 +139,7 @@ To run tests, run the following command:
   rubocop -A
 ``` -->
 
-### Run Linter Tests
+### Run Linter Tests <a name="run-tests"></a>
 
 To run linter tests, run the following command:
 
@@ -208,7 +208,7 @@ If you like this project give a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 📝 License
+## 📝 License <a href="#license">back to top</a>
 
 This project is [MIT](./MIT.md) licensed.
 

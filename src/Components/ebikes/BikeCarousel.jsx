@@ -4,6 +4,8 @@ import './ebikes.css';
 import BikeCard from './BikeCard';
 import NavigationPanel from '../NavigationPanel';
 
+
+// eslint-disable-next-line no-unused-vars
 const BikeCarousel = ({ bikes: mockBikes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
