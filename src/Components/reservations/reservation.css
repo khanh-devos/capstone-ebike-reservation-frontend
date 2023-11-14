@@ -145,10 +145,13 @@
   width: 90%;
   margin: auto;
   margin-top: 20px;
+  border: #82b300 2px solid;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
 }
 
 .card_image {
-  width: 100%;
+  width: 60%;
   border-radius: 10px 10px 0 0;
 }
 
@@ -160,5 +163,6 @@
 
 .card_item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
