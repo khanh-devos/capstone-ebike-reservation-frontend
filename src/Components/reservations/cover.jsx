@@ -1,6 +1,6 @@
 import './reservation.css';
 
-export default function MirrorCover() {
+const MirrorCover = () => {
   return (
     <>
       <img
@@ -13,3 +13,5 @@ export default function MirrorCover() {
     </>
   );
 }
+
+export default MirrorCover;

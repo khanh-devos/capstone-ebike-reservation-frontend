@@ -12,7 +12,7 @@ import logo from '../img/E-bikebackground.png';
 import useClickOutside from '../hooks/useClickOutside';
 import { logout } from '../redux/auth/authSlice';
 
-function NavigationPanel() {
+const NavigationPanel = () => {
   const { isLogined, user } = useSelector((state) => state.authSlice);
   const isAdmin = user.role === 'admin';
   const dispatch = useDispatch();

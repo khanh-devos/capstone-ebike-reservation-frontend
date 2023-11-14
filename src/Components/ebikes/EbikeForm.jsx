@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { postEbike } from '../../redux/ebike/addingNewbike';
 
-function EbikeForm() {
+const EbikeForm = () => {
   const dispatch = useDispatch();
   const { locations } = useSelector((state) => state.locationSlice);
   const { ebikeModels } = useSelector((state) => state.ebikeModelSlice);

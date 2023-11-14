@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservation/reservationSlice';
 import './reservation.css';
 
-function MyReservations() {
+const MyReservations = () => {
   const dispatch = useDispatch();
   const { reservations } = useSelector((state) => state.reservationSlice);
   const { user } = useSelector((state) => state.authSlice);

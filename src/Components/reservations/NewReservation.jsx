@@ -7,7 +7,7 @@ import { addReservation, fetchReservations } from '../../redux/reservation/reser
 import MyCalendar from './MyCalendar';
 import MirrorCover from './cover';
 
-export default function NewReservation() {
+const NewReservation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLogined } = useSelector((state) => state.authSlice);
@@ -132,3 +132,5 @@ export default function NewReservation() {
     </div>
   );
 }
+
+export default NewReservation;
