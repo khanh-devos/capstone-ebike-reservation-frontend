@@ -7,7 +7,7 @@ import {
 } from 'react-icons/bi';
 import { setEbike } from '../../redux/ebike/ebikeSlice';
 
-function BikeCard({ bike }) {
+const BikeCard = ({ bike }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const clickAbike = () => {

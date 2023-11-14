@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Calendar from 'reactjs-availability-calendar';
 import './forcalendar.css';
 
-export default function MyCalendar({ bikeId }) {
+const MyCalendar = ({ bikeId }) => {
   const { reservations } = useSelector((state) => state.reservationSlice);
 
   const bookings = reservations
@@ -21,3 +21,5 @@ export default function MyCalendar({ bikeId }) {
 MyCalendar.propTypes = {
   bikeId: PropTypes.number.isRequired,
 };
+
+export default MyCalendar;

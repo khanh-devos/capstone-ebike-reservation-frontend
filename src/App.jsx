@@ -23,7 +23,7 @@ import EbikeForm from './Components/ebikes/EbikeForm';
 import { fetchEbikeModels } from './redux/ebike_models/ebikeModelSlice';
 import { resetAddEbikeMessage } from './redux/ebike/addingNewbike';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const { message, isLogined } = useSelector((state) => state.authSlice);
   const { message: addReserveMessage } = useSelector((state) => state.reservationSlice);
@@ -70,6 +70,6 @@ function App() {
     </div>
 
   );
-}
+};
 
 export default App;

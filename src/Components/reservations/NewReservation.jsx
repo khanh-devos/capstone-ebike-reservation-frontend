@@ -8,7 +8,7 @@ import MyCalendar from './MyCalendar';
 import MirrorCover from './cover';
 import NavigationPanel from '../NavigationPanel';
 
-export default function NewReservation() {
+const NewReservation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLogined } = useSelector((state) => state.authSlice);
@@ -134,3 +134,5 @@ export default function NewReservation() {
     </div>
   );
 }
+
+export default NewReservation;

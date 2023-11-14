@@ -5,7 +5,7 @@ import { fetchLogin } from '../../redux/auth/authSlice';
 import MirrorCover from '../reservations/cover';
 import './auth.css';
 
-function Loginpage() {
+const Loginpage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLogined } = useSelector((state) => state.authSlice);

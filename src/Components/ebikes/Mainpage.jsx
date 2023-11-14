@@ -4,7 +4,7 @@ import '../../index.css';
 import { fetchEbike } from '../../redux/ebike/ebikeSlice';
 import BikeCarousel from './BikeCarousel';
 
-function Mainpage() {
+const Mainpage = () => {
   const dispatch = useDispatch();
   const { ebikes: bikes } = useSelector((state) => state.ebikeSlice);
 

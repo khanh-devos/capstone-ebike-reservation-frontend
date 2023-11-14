@@ -6,7 +6,7 @@ import {
 import rainbow from './rainbow.png';
 import { deleteEbike, resetMessage } from '../../redux/ebike/ebikeSlice';
 
-export default function SpecificBike() {
+const SpecificBike = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const {
     ebikes, ebike, isLoading, message,
@@ -116,3 +116,5 @@ export default function SpecificBike() {
     </div>
   );
 }
+
+export default SpecificBike;

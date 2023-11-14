@@ -4,7 +4,7 @@ import { fetchReservations } from '../../redux/reservation/reservationSlice';
 import './reservation.css';
 import NavigationPanel from '../NavigationPanel';
 
-function MyReservations() {
+const MyReservations = () => {
   const dispatch = useDispatch();
   const { reservations } = useSelector((state) => state.reservationSlice);
   const { user } = useSelector((state) => state.authSlice);
