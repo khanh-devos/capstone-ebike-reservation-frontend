@@ -11,7 +11,6 @@ import { fetchEbike } from './redux/ebike/ebikeSlice';
 import Signup from './Components/auth/Signup';
 import MyReservations from './Components/reservations/MyReservations';
 import Mainpage from './Components/ebikes/Mainpage';
-// import { fetchReservation } from './redux/reservation/reservationSlice';
 import SpecificBike from './Components/ebikes/SpecificBike';
 import NewReservation from './Components/reservations/NewReservation';
 import { resetMessage } from './redux/auth/authSlice';
