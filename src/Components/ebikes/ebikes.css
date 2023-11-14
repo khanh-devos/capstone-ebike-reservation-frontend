@@ -466,4 +466,11 @@
 .table_row_2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
+
+.box {
+  width: 60%;
+  margin: auto;
+}
+

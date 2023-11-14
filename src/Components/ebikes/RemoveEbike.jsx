@@ -14,7 +14,7 @@ function RemoveEbike() {
   return (
     <div className="container">
       <h1 className="title">RemoveEbike</h1>
-      <div className="container ">
+      <div className="container box ">
         {
                 ebikes && ebikes.length > 0 ? ebikes.map((ebike) => (ebike.seller_id === user.id
                   ? (
