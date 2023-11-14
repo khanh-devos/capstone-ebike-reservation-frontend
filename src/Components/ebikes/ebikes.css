@@ -270,6 +270,10 @@
   background-color: #bb0303;
 }
 
+.btn-delete:hover {
+  background-color: #e04f4f;
+}
+
 /* Get new point  */
 .generalMenu {
   display: flex;
