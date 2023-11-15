@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const backendURL = process.env.REACT_APP_BACKEND_URL;
-const LOCATION_URL = `${backendURL}/ebike_models`;
+const LOCATION_URL = `${backendURL}/locations`;
 
 const initialState = {
   locations: [],
