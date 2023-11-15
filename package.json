@@ -1,6 +1,7 @@
 {
   "name": "capstone-ebike-reservation-frontend",
   "version": "0.1.0",
+  "homepage": "https://khanh-devos.github.io/capstone-ebike-reservation-frontend",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -31,6 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "mystart": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "react-scripts build",
@@ -66,6 +69,7 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.0.0",
     "jest": "^27.5.1",
     "react-test-renderer": "^18.2.0",
     "side-channel": "^1.0.4",
