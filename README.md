@@ -10,7 +10,7 @@
   - [🛠️ Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-      <!-- [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -83,13 +83,10 @@ Link to the [backend](https://github.com/khanh-devos/capstone-ebike-reservation-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ## LIVE DEMO
+## 🚀 Live Demo <a name="live-demo"></a>
+- [Live Demo](https://reservations-frontend-06mp.onrender.com/)
 
-🚀 Live Demo
-
-To see my app deployed go to this link: (https://) -->
-
-<!-- You can also see a video of mine of a demonstration in this link (https://www.youtube.com/watch?v=D0-xjcWNNj4) -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Kaban Board <a name="Kaban-Board"></a>
 
