@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/capstone-ebike-reservation-frontend/static/css/main.88052951.css",
-    "main.js": "/capstone-ebike-reservation-frontend/static/js/main.58c23c8d.js",
+    "main.js": "/capstone-ebike-reservation-frontend/static/js/main.abaf8c20.js",
     "static/media/E-bikebackground.png": "/capstone-ebike-reservation-frontend/static/media/E-bikebackground.70c9a7cdccaf0c374b0c.png",
     "static/media/rainbow.png": "/capstone-ebike-reservation-frontend/static/media/rainbow.7e526f24a6de7cb38e88.png",
     "index.html": "/capstone-ebike-reservation-frontend/index.html",
     "main.88052951.css.map": "/capstone-ebike-reservation-frontend/static/css/main.88052951.css.map",
-    "main.58c23c8d.js.map": "/capstone-ebike-reservation-frontend/static/js/main.58c23c8d.js.map"
+    "main.abaf8c20.js.map": "/capstone-ebike-reservation-frontend/static/js/main.abaf8c20.js.map"
   },
   "entrypoints": [
     "static/css/main.88052951.css",
-    "static/js/main.58c23c8d.js"
+    "static/js/main.abaf8c20.js"
   ]
 }
