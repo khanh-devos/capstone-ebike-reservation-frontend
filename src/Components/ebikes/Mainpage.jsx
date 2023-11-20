@@ -12,7 +12,7 @@ const Mainpage = () => {
     dispatch(fetchEbike());
   }, [dispatch]);
 
-  if (isLoading) return <h2>LOADING...</h2>;
+  if (isLoading) return <h3>LOADING...</h3>;
 
   return (
     <div className="main-conteiner-mainpage">
