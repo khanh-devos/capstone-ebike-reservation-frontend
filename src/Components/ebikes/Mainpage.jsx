@@ -6,11 +6,13 @@ import BikeCarousel from './BikeCarousel';
 
 const Mainpage = () => {
   const dispatch = useDispatch();
-  const { ebikes: bikes } = useSelector((state) => state.ebikeSlice);
+  const { ebikes: bikes, isLoading } = useSelector((state) => state.ebikeSlice);
 
   useEffect(() => {
     dispatch(fetchEbike());
   }, [dispatch]);
+
+  if (isLoading) return <h2>LOADING...</h2>
 
   return (
     <div className="main-conteiner-mainpage">
