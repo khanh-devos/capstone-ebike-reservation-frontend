@@ -25,7 +25,7 @@ const NewReservation = () => {
   useEffect(() => {
     if (!isLogined) navigate('/');
     if (isReserveSuccess) dispatch(fetchReservations());
-  }, [dispatch, navigate, isLogined, isReserveSuccess]);
+  }, [dispatch, navigate, isLogined, isReserveSuccess, bikeId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

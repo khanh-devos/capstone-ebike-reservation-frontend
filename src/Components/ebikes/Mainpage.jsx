@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../index.css';
 import { fetchEbike } from '../../redux/ebike/ebikeSlice';
+import Loading from '../Loading';
 import BikeCarousel from './BikeCarousel';
 
 const Mainpage = () => {
@@ -12,7 +13,7 @@ const Mainpage = () => {
     dispatch(fetchEbike());
   }, [dispatch]);
 
-  if (isLoading) return <h3>LOADING...</h3>;
+  if (isLoading) return <Loading />;
 
   return (
     <div className="main-conteiner-mainpage">
