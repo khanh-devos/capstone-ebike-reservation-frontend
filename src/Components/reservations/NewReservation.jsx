@@ -6,26 +6,29 @@ import './reservation.css';
 import { addReservation, fetchReservations } from '../../redux/reservation/reservationSlice';
 import MyCalendar from './MyCalendar';
 import MirrorCover from './cover';
+import Loading from '../Loading';
 
 const NewReservation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLogined } = useSelector((state) => state.authSlice);
   const { isSuccess: isReserveSuccess } = useSelector((state) => state.reservationSlice);
-  const { locations } = useSelector((state) => state.locationSlice);
+  const { locations, isLoading: locationLoading } = useSelector((state) => state.locationSlice);
 
   const { ebikes } = useSelector((state) => state.ebikeSlice);
   const { id } = useParams();
-  const lastbike = ebikes[ebikes.length - 1];
-  const [bikeId, setBikeId] = useState(id.includes(':id') ? lastbike?.id : id);
 
-  const bike = ebikes.find((item) => item.id === Number(bikeId));
-  const sameCityBikes = ebikes.filter((item) => item.city === bike?.city);
+  const [bikeId, setBikeId] = useState(id.includes(':id') ? null : Number(id));
+
+  const bike = bikeId ? ebikes.find((item) => item.id === bikeId) : null;
+
+  const [city, setCity] = useState(bikeId && bike ? bike.city : null);
+  const sameCityBikes = city ? ebikes.filter((item) => item.city === city) : [];
 
   useEffect(() => {
     if (!isLogined) navigate('/');
     if (isReserveSuccess) dispatch(fetchReservations());
-  }, [dispatch, navigate, isLogined, isReserveSuccess, bikeId]);
+  }, [dispatch, navigate, isLogined, isReserveSuccess]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,13 +51,17 @@ const NewReservation = () => {
   };
 
   const handleBikeCity = (e) => {
-    const selectBike = ebikes.find((item) => item.city === e.currentTarget.value);
-    setBikeId(selectBike?.id);
+    if (e.currentTarget.value) {
+      setCity(e.currentTarget.value);
+      setBikeId(null); // reset calendar
+    }
   };
 
   const handleBikeModel = (e) => {
-    setBikeId(Number(e.currentTarget.value));
+    if (e.currentTarget.value) setBikeId(Number(e.currentTarget.value));
   };
+
+  if (locationLoading) return <Loading />;
 
   return (
     <div className="reservation-page">
@@ -68,11 +75,16 @@ const NewReservation = () => {
       <form className="reservation-form" onSubmit={handleSubmit}>
 
         <div className="date-input">
-          <h5>Select Your City : </h5>
-          <select name="city" onChange={handleBikeCity} className="reservation-input city-selection">
+          <h5>City : </h5>
+          <select
+            name="city"
+            onChange={handleBikeCity}
+            className="reservation-input city-selection"
+          >
+            <option key={v4()} value={null}>Select your city</option>
             {
-            locations.length > 0 && locations.map((item) => {
-              if (item === bike?.city) {
+            locations.map((item) => {
+              if (item === city) {
                 return <option key={v4()} value={`${item}`} selected>{item}</option>;
               }
 
@@ -87,13 +99,29 @@ const NewReservation = () => {
           {
           sameCityBikes.length > 0
           && (
-          <select name="ebike" onChange={handleBikeModel} className="reservation-input">
+          <select
+            name="ebike"
+            onChange={handleBikeModel}
+            className="reservation-input"
+          >
+            <option key={v4()} value={null}>Select bike model</option>
+
             {
-            sameCityBikes.map((item) => (
-              <option key={v4()} value={item.id}>
-                {`${item.model?.toUpperCase()} - ${item.id}`}
-              </option>
-            ))
+            sameCityBikes.map((item) => {
+              if (item.id === bikeId) {
+                return (
+                  <option key={v4()} value={item.id} selected>
+                    {`${item.model?.toUpperCase()} - ${item.id}`}
+                  </option>
+                );
+              }
+
+              return (
+                <option key={v4()} value={item.id}>
+                  {`${item.model?.toUpperCase()} - ${item.id}`}
+                </option>
+              );
+            })
             }
           </select>
           )

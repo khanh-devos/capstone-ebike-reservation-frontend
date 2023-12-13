@@ -169,11 +169,6 @@
   opacity: 0;
 }
 
-.lateCheckoutType span {
-  background: var(--color2);
-  display: none;
-}
-
 .key .type span::before {
   content: '';
   display: block;

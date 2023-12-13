@@ -5,7 +5,13 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const domNode = document.getElementById('root');
+
+const root = ReactDOM.createRoot(domNode);
+// const root = ReactDOM.hydrateRoot(domNode,
+//   <Provider store={store}>
+//     <App />
+//   </Provider>);
 
 root.render(
   <React.StrictMode>
