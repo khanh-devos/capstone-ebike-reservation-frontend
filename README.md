@@ -83,11 +83,11 @@ Link to the [backend](https://github.com/khanh-devos/capstone-ebike-reservation-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ## LIVE DEMO
+## LIVE DEMO
 
 🚀 Live Demo
 
-To see my app deployed go to this link: (https://) -->
+To see my app deployed go to this link: (https://khanh-devos.github.io/capstone-ebike-reservation-frontend/)
 
 <!-- You can also see a video of mine of a demonstration in this link (https://www.youtube.com/watch?v=D0-xjcWNNj4) -->
 
