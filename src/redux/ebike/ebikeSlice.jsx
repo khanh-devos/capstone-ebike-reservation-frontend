@@ -6,7 +6,7 @@ const EBIKE_URL = `${backendURL}/ebikes`;
 const initialState = {
   ebikes: [],
   ebike: {},
-  isLoading: true,
+  isLoading: false,
   message: '',
 };
 

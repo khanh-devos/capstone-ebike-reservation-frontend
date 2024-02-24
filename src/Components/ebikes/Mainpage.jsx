@@ -2,15 +2,18 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../index.css';
 import { fetchEbike } from '../../redux/ebike/ebikeSlice';
+import Loading from '../Loading';
 import BikeCarousel from './BikeCarousel';
 
 const Mainpage = () => {
   const dispatch = useDispatch();
-  const { ebikes: bikes } = useSelector((state) => state.ebikeSlice);
+  const { ebikes: bikes, isLoading } = useSelector((state) => state.ebikeSlice);
 
   useEffect(() => {
     dispatch(fetchEbike());
   }, [dispatch]);
+
+  if (isLoading) return <Loading />;
 
   return (
     <div className="main-conteiner-mainpage">

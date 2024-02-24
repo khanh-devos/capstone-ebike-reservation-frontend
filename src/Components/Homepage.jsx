@@ -2,6 +2,7 @@ import '../index.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Loading from './Loading';
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Homepage = () => {
     if (isLogined) navigate('/ebikes');
   }, [navigate, isLogined]);
 
-  if (isLoading) return <h3>LOADING...</h3>;
+  if (isLoading) return <Loading />;
 
   return (
     <div className="bgcontainer">

@@ -52,7 +52,7 @@ const App = () => {
       { addReserveMessage && <Message message={addReserveMessage} />}
       { addEbikeMessage && <Message message={addEbikeMessage} />}
 
-      <Router>
+      <Router basename="capstone-ebike-reservation-frontend">
         <div className="App">
           <Routes>
             <Route path="/myreservations" element={<MyReservations />} />

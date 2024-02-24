@@ -83,30 +83,15 @@ Link to the [backend](https://github.com/khanh-devos/capstone-ebike-reservation-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo](https://reservations-frontend-06mp.onrender.com/)
+## LIVE DEMO
+
+🚀 [Live Demo](https://khanh-devos.github.io/capstone-ebike-reservation-frontend/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Kaban Board <a name="Kaban-Board"></a>
+To see my app deployed go to this link: (https://khanh-devos.github.io/capstone-ebike-reservation-frontend/)
 
-- [Kaban Board](https://github.com/khanh-devos/capstone-ebike-reservation-backend/projects/1) This is the link to the project management tool used to track the progress of the project.
-
-### Kaban Board Initial State <a name="initial-state"></a>
-
-- [Kaban Board Initial State](https://github.com/khanh-devos/capstone-ebike-reservation-backend/issues/47) This is the link to the project management tool used to track the progress of the project.
-
-In this team, we are 4 in number,
-
-- @khanh-devos
-- @rodrigopenayo98
-- @Souad El Mansouri
-- @Tchasinga jacques
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<!-- You can also see a video of mine of a demonstration in this link (https://www.youtube.com/watch?v=D0-xjcWNNj4) -->
 
 <!-- GETTING STARTED -->
 
